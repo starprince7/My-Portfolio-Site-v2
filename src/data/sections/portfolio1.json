@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": "/img/portfolio/projects/g-search-screenshot.png",
+    "title": "Google.com /clone",
+    "tags": ["Next.js", "Google search API", "TailWind-CSS"],
+    "filterCategory": ["web"],
+    "url": "https://g-search-kappa.vercel.app/"
+  },
+  {
+    "id": 2,
+    "image": "/img/portfolio/projects/ecom-stripe.png",
+    "title": "E-commerce App with Stripe Payment",
+    "tags": ["React.js", "Node.js", "Stripe Payment API"],
+    "filterCategory": ["web"],
+    "url": "https://safe-tor-40287.herokuapp.com/"
+  },
+  {
+    "id": 3,
+    "image": "/img/portfolio/projects/blog-screenshot.png",
+    "title": "Blog Website",
+    "tags": ["ejs", "Node.js"],
+    "filterCategory": ["web"],
+    "url": "https://enigmatic-bayou-62084.herokuapp.com/login"
+  },
+  {
+    "id": 4,
+    "image": "/img/portfolio/projects/konga-screenshot.png",
+    "title": "E-commerce Application Konga.com Clone",
+    "tags": ["React.js", "Node.js", "Paystack Payment API"],
+    "filterCategory": ["web"],
+    "url": "https://enigmatic-stream-91182.herokuapp.com"
+  },
+  {
+    "id": 5,
+    "image": "/img/portfolio/projects/funmate-screenshot.png",
+    "title": "Funmate, dating app for singles",
+    "tags": ["Next.js", "Material UI", "TailWind-CSS"],
+    "filterCategory": ["mobileApps"],
+    "url": ""
+  }
+]
