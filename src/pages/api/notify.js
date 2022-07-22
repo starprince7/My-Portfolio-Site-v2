@@ -11,7 +11,7 @@ const auth_credentials = {
 }
 
 const notificationHandler = async (req, res) => {
-    // console.log(req.body)
+    const { name, email, message } = req.body;
 
     const client = mailgun.client(auth_credentials)
 
@@ -19,7 +19,7 @@ const notificationHandler = async (req, res) => {
         from: "Portfolio Site <codeplugservices@gmail.com>",
         to: process.env.ADMIN_EMAIL,
         subject: "Get In Touch",
-        text: JSON.stringify(req.body),
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
     try {
