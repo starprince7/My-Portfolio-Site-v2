@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": { "first": "Hello, I am", "second": "Prince" },
+    "title": { "first": "Hi, I am", "second": "Prince" },
     "image": "/img/portfolio/full2/1.jpg",
     "sub": "Design",
     "link": "/project-details2/project-details2-dark"
@@ -16,7 +16,7 @@
   {
     "id": 3,
     "title": { "first": "See my", "second": "Works" },
-    "image": "/img/portfolio/full2/7 .jpg",
+    "image": "/img/portfolio/full2/7.jpg",
     "sub": "Design",
     "link": "/project-details2/project-details2-dark"
   },

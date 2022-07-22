@@ -1,8 +1,11 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, prepareDataForValidation } from "formik";
 
 const ContactWithMap = () => {
   const messageRef = React.useRef(null);
+  const BtnTextRef = React.useRef(null);
+  const [successMsg, setSuccessMsg] = React.useState(false)
+
   function validateEmail(value) {
     let error;
     if (!value) {
@@ -12,7 +15,21 @@ const ContactWithMap = () => {
     }
     return error;
   }
-  const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  const sendMessage = async (data) => {
+    const response = await fetch('/api/notify', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    
+    const response_data = await response.json()
+
+    return response_data
+  }
+
   return (
     <>
       <section className="contact section-padding">
@@ -29,10 +46,26 @@ const ContactWithMap = () => {
                     message: "",
                   }}
                   onSubmit={async (values) => {
-                    await sendMessage(500);
-                    alert(JSON.stringify(values, null, 2));
-                    // show message
+                    BtnTextRef.current.textContent = "Sending..."
+                    BtnTextRef.current.disabled = true
+                    // Send msg
+                    const res = await sendMessage(values);
+                    // alert(JSON.stringify(values, null, 2));
 
+                    // Error in response
+                    if (res.error) {
+                      BtnTextRef.current.textContent = "Send Message"
+                      BtnTextRef.current.disabled = false
+                      alert("Something went wrong, please feel free to leave me an email or send me a direct message through my social accounts.")
+                    }
+
+                    // Success in response
+                    if(res.msg) {
+                      BtnTextRef.current.textContent = "Send Message"
+                      BtnTextRef.current.disabled = false
+                    }
+
+                    setSuccessMsg(true)
                     messageRef.current.innerText =
                       "Your Message has been successfully sent. I will contact you soon.";
                     // Reset the values
@@ -42,12 +75,14 @@ const ContactWithMap = () => {
                     // clear message
                     setTimeout(() => {
                       messageRef.current.innerText = "";
-                    }, 2000);
+                      setSuccessMsg(false)
+                    }, 6000);
                   }}
                 >
                   {({ errors, touched }) => (
                     <Form id="contact-form">
-                      <div className="messages" ref={messageRef}></div>
+                      {successMsg &&
+                        <div style={{fontSize: '13px'}} className="messages p-3 bg-secondary text-center text-white rounded" ref={messageRef}></div>}
 
                       <div className="controls">
                         <div className="form-group">
@@ -70,7 +105,7 @@ const ContactWithMap = () => {
                             required="required"
                           />
                           {errors.email && touched.email && (
-                            <div>{errors.email}</div>
+                            <div className="text-danger">{errors.email}</div>
                           )}
                         </div>
 
@@ -86,7 +121,7 @@ const ContactWithMap = () => {
                         </div>
 
                         <button type="submit" className="btn-curve btn-lit">
-                          <span>Send Message</span>
+                          <span ref={BtnTextRef}>Send Message</span>
                         </button>
                       </div>
                     </Form>
@@ -120,10 +155,10 @@ const ContactWithMap = () => {
                   <a href="https://www.linkedin.com/in/prince-nweke-295a5b191/" className="icon">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="#0" className="icon">
+                  <a href="https://twitter.com/starprince_dev" className="icon">
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href="#0" className="icon">
+                  <a href="https://www.instagram.com/starprince_dev/" className="icon">
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
