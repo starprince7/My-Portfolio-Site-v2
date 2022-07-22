@@ -60,7 +60,7 @@ const VideoWithTestimonials = () => {
                       solutions to people and small businesses in
                       the shortest amount of time. Proficient in
                       current web technologies and best practices
-                      for software development, I'm calm self-assured
+                      for software development, I&apos;m calm self-assured
                       in what I do. One of my goals is to become a
                       solution-driven software engineer by applying
                       my skill set to solving dynamic challenges.
