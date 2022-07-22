@@ -55,7 +55,7 @@ const VideoWithTestimonials = () => {
                 >
                   <div className="item">
                     <p>
-                      I'm a software developer from Lagos, Nigeria.
+                      I&apos;m a software developer from Lagos, Nigeria.
                       My focus is on providing simple yet elegant 
                       solutions to people and small businesses in
                       the shortest amount of time. Proficient in
