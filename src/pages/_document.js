@@ -15,13 +15,16 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="keywords"
-            content="HTML5 Template Avo onepage themeforest"
+            content="Prince Nweke, prince, nweke, prince nweke, javascript developer, software developer, software engineer, fullstack, developer"
           />
           <meta
             name="description"
-            content="Avo - Onepage Multi-Purpose HTML5 Template"
+            content="I'm a software developer from Lagos, Nigeria.
+                      My focus is on providing simple yet elegant 
+                      solutions to people and small businesses in
+                      the shortest amount of time."
           />
-          <meta name="author" content="" />
+          <meta name="author" content="Prince Agezichukwu Nweke" />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           {/* Google Fonts */}
           <link
