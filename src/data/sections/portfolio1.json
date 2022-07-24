@@ -2,7 +2,7 @@
   {
     "id": 1,
     "image": "/img/portfolio/projects/g-search-screenshot.png",
-    "title": "Google.com /clone",
+    "title": "Google.com (clone) G-search",
     "tags": ["Next.js", "Google search API", "TailWind-CSS"],
     "filterCategory": ["web"],
     "url": "https://g-search-kappa.vercel.app/"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "image": "/img/portfolio/projects/konga-screenshot.png",
-    "title": "E-commerce Application Konga.com Clone",
+    "title": "E-commerce Application (Konga.com Clone)",
     "tags": ["React.js", "Node.js", "Paystack Payment API"],
     "filterCategory": ["web"],
     "url": "https://enigmatic-stream-91182.herokuapp.com"
@@ -34,9 +34,9 @@
   {
     "id": 5,
     "image": "/img/portfolio/projects/funmate-screenshot.png",
-    "title": "Funmate, dating app for singles",
+    "title": "Funmate. Dating app  4Singles",
     "tags": ["Next.js", "Material UI", "TailWind-CSS"],
     "filterCategory": ["mobileApps"],
-    "url": ""
+    "url": "https://funmate.vercel.app/login"
   }
 ]
