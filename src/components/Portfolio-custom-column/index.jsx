@@ -20,6 +20,12 @@ const PortfolioCustomColumn = ({
       }, 1000);
     }
   }, [pageLoaded]);
+  
+  // Refresh onMount!
+  React.useEffect(() => {
+    window.location.reload()
+  }, [])
+
   return (
     <section className="portfolio section-padding pb-70">
       {!hideSectionTitle && (
