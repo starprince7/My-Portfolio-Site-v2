@@ -23,7 +23,12 @@ const PortfolioCustomColumn = ({
   
   // Refresh onMount!
   React.useEffect(() => {
-    window.location.reload()
+    const count = JSON.parse(localStorage.getItem('Refresh_count'))
+    
+    if (!count || count < 1) {
+      localStorage.setItem('Refresh_count', JSON.stringify(1))
+      window.location.reload()
+    }
   }, [])
 
   return (
