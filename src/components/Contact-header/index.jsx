@@ -20,7 +20,7 @@ const ContactHeader = ({ sliderRef }) => {
                   <span>Let&apos;s</span>Talk About Your project.
                 </h2>
                 <p>
-                  Feel free to ask me any question or let&apos;s do to talk
+                  Feel free to ask me any question or let&apos;s do two, we can talk
                   about our future collaboration.
                 </p>
               </div>
