@@ -22,7 +22,8 @@ const Footer = () => {
             <div className="cont">
               <div className="logo">
                 <a href="#0">
-                  <img src={`${appData.lightLogo}`} alt="" />
+                <h6 className="portfolio-logo">PRINCE NWEKE</h6>
+                  {/* <img src={`${appData.lightLogo}`} alt="" /> */}
                 </a>
               </div>
               <div className="con-info custom-font">
@@ -62,7 +63,7 @@ const Footer = () => {
         </div>
         <div className="copyrights text-center">
           <p>
-            © {new Date().getFullYear()} <a href="#0"> PRINCE NWEKE.</a> Developed with Next.js
+            © {new Date().getFullYear()} <a href="#0" className="portfolio-logo-footer"> PRINCE NWEKE</a>
           </p>
         </div>
       </div>

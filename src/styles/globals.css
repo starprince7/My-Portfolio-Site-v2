@@ -1,3 +1,21 @@
+@font-face {
+  font-family: NextSphereBold;
+  src: url('/fonts/next-sphere-font/NextSphereBold.ttf')
+}
+@font-face {
+  font-family: NextSphereThin;
+  src: url('/fonts/next-sphere-font/NextSphereThin.ttf')
+}
+
+.portfolio-logo {
+  font-family: NextSphereBold;
+  font-size: medium;
+}
+.portfolio-logo-footer {
+  font-family: NextSphereBold;
+  font-size: smaller;
+}
+
 .blog-crv .item {
   display: flex;
   align-items: center;

@@ -20,12 +20,12 @@ const NavbarFullMenu = ({ theme, lr }) => {
             <Link href="/">
               {theme ? (
                 theme === "light" ? (
-                  <img src={`${appData.darkLogo}`} alt="logo" />
+                  {/* <img src={`${appData.darkLogo}`} alt="logo" /> */ }
                 ) : (
                   <img src={`${appData.lightLogo}`} alt="logo" />
                 )
               ) : (
-                <img src={`${appData.lightLogo}`} alt="logo" />
+                <h6 className="portfolio-logo">PRINCE NWEKE</h6>
               )}
             </Link>
           </div>

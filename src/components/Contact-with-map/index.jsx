@@ -183,7 +183,7 @@ const ContactWithMap = () => {
         <div className="container">
           <div className="copyrights text-center mt-0">
             <p>
-              © {new Date().getFullYear()} <a href="#0"> PRINCE NWEKE</a>.
+              © {new Date().getFullYear()} <a href="#0" className="portfolio-logo-footer"> PRINCE NWEKE</a>
             </p>
           </div>
         </div>

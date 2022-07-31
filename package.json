@@ -21,7 +21,8 @@
     "react-slick": "^0.28.1",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^7.4.1"
+    "swiper": "^7.4.1",
+    "ytdl-core": "^4.11.0"
   },
   "devDependencies": {
     "eslint": "8.6.0",

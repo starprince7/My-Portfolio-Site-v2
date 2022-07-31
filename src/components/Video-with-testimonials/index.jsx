@@ -56,14 +56,14 @@ const VideoWithTestimonials = () => {
                   <div className="item">
                     <p>
                       I&apos;m a software developer from Lagos, Nigeria.
-                      My focus is on providing simple yet elegant 
-                      solutions to people and small businesses in
-                      the shortest amount of time. Proficient in
-                      current web technologies and best practices
-                      for software development, I&apos;m calm self-assured
-                      in what I do. One of my goals is to become a
-                      solution-driven software engineer by applying
-                      my skill set to solving dynamic challenges.
+                      With my proficiency in contemporary web technologies 
+                      and software development best practices,
+                      my primary goal is to provide people and small 
+                      businesses with simple yet elegant solutions 
+                      in the smallest amount of time. I am confident in what I do. One of 
+                      my ambitions is to become a solution-driven software 
+                      engineer by using my skill set to tackling dynamic 
+                      difficulties.
                     </p>
                   </div>
                 </Slider>
