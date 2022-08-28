@@ -7,7 +7,7 @@ const DOMAIN = process.env.MAILGUN_ACCEPTED_DOMAIN;
 const auth_credentials = {
     username: 'api',
     key: process.env.MAILGUN_API_KEY,
-    url: 'https://api.eu.mailgun.net'
+    url: 'https://api.mailgun.net'
 }
 
 const notificationHandler = async (req, res) => {

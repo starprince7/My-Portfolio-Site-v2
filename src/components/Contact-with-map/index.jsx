@@ -4,7 +4,7 @@ import { Formik, Form, Field, prepareDataForValidation } from "formik";
 const ContactWithMap = () => {
   const messageRef = React.useRef(null);
   const BtnTextRef = React.useRef(null);
-  const [successMsg, setSuccessMsg] = React.useState(false)
+  const [successMsg, setSuccessMsg] = React.useState(false);
 
   function validateEmail(value) {
     let error;
@@ -23,12 +23,12 @@ const ContactWithMap = () => {
       headers: {
         "Content-Type": "application/json"
       }
-    })
-    
-    const response_data = await response.json()
+    });
 
-    return response_data
-  }
+    const response_data = await response.json();
+
+    return response_data;
+  };
 
   return (
     <>
@@ -46,28 +46,29 @@ const ContactWithMap = () => {
                     message: "",
                   }}
                   onSubmit={async (values) => {
-                    BtnTextRef.current.textContent = "Sending..."
-                    BtnTextRef.current.disabled = true
+                    BtnTextRef.current.textContent = "Sending...";
+                    BtnTextRef.current.disabled = true;
                     // Send msg
                     const res = await sendMessage(values);
                     // alert(JSON.stringify(values, null, 2));
 
                     // Error in response
                     if (res.error) {
-                      BtnTextRef.current.textContent = "Send Message"
-                      BtnTextRef.current.disabled = false
-                      alert("Something went wrong, please feel free to leave me an email or send me a direct message through my social accounts.")
+                      BtnTextRef.current.textContent = "Send Message";
+                      BtnTextRef.current.disabled = false;
+                      alert("Something went wrong, please feel free to leave me an email or send me a direct message through my social accounts.");
+                      return;
                     }
 
                     // Success in response
-                    if(res.msg) {
-                      BtnTextRef.current.textContent = "Send Message"
-                      BtnTextRef.current.disabled = false
+                    if (res.msg) {
+                      BtnTextRef.current.textContent = "Send Message";
+                      BtnTextRef.current.disabled = false;
                     }
 
-                    setSuccessMsg(true)
+                    setSuccessMsg(true);
                     messageRef.current.innerText =
-                      "Your Message has been successfully sent. I will contact you soon.";
+                      "Your message was recieved successfully, I'll be contacting you shortly.";
                     // Reset the values
                     values.name = "";
                     values.email = "";
@@ -75,14 +76,14 @@ const ContactWithMap = () => {
                     // clear message
                     setTimeout(() => {
                       messageRef.current.innerText = "";
-                      setSuccessMsg(false)
-                    }, 6000);
+                      setSuccessMsg(false);
+                    }, 7000);
                   }}
                 >
                   {({ errors, touched }) => (
                     <Form id="contact-form">
                       {successMsg &&
-                        <div style={{fontSize: '13px'}} className="messages p-3 bg-secondary text-center text-white rounded" ref={messageRef}></div>}
+                        <div style={{ fontSize: '13px' }} className="messages p-3 bg-secondary text-center text-white rounded" ref={messageRef}></div>}
 
                       <div className="controls">
                         <div className="form-group">
@@ -175,7 +176,7 @@ const ContactWithMap = () => {
           height="450"
           allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
 
