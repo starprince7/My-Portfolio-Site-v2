@@ -8,7 +8,7 @@
   },
   {
     "id": 2,
-    "title": { "first": "I'm a full stack", "second": "Developer." },
+    "title": { "first": "I build fullstack", "second": "apps." },
     "image": "/img/portfolio/full2/1.jpg",
     "sub": "Design",
     "link": "/about-me"
