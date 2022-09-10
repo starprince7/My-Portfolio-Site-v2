@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": { "first": "Hi, I am", "second": "Prince." },
-    "image": "/img/portfolio/full2/prince_white_bg.jpg",
+    "image": "/img/portfolio/full2/prince_white_bg.JPG",
     "sub": "Design",
     "link": "/#"
   },
@@ -15,7 +15,7 @@
   },
   {
     "id": 3,
-    "title": { "first": "Click, to see", "second": ">My works." },
+    "title": { "first": "Click, to see", "second": "> My works." },
     "image": "/img/portfolio/full2/7.jpg",
     "sub": "Design",
     "link": "/portfolio"
@@ -23,7 +23,7 @@
   {
     "id": 4,
     "title": { "first": "Let's discuss your idea,", "second": "Reach me >" },
-    "image": "/img/portfolio/full2/prince_profile.jpg",
+    "image": "/img/portfolio/full2/prince_profile.JPG",
     "sub": "Design",
     "link": "/contact"
   }
