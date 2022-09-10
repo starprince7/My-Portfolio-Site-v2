@@ -1312,7 +1312,7 @@ body {
 
 [data-overlay-dark="4"]:before,
 [data-overlay-light="4"]:before {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 [data-overlay-dark="5"]:before,
