@@ -89,7 +89,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                   </li>
                   <li>
                     <div className="o-hidden">
-                      <Link href="/resume/RESUME_NWEKE_PRINCE_AGEZICHUKWU_JAN_2023.pdf">
+                      <Link href="/resume/Prince_Nweke_Resume.pdf">
                         <a className="link">
                           <span className="nm">05.</span>Resume
                         </a>
@@ -104,7 +104,8 @@ const NavbarFullMenu = ({ theme, lr }) => {
               <div className="cont-info">
                 <div className="item">
                   <h6>Phone :</h6>
-                  <p>+234 902 484 7299</p>
+                  <a href="tel:+2349024847299"> <p>+234 902 484 7299</p></a> <br />
+                  <a href="tel:+2347037130120"><p>+234 703 713 0120</p></a>
                 </div>
                 <div className="item">
                   <h6>Location :</h6>
@@ -115,7 +116,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                 <div className="item">
                   <h6>Email :</h6>
                   <p>
-                    <a href="#0">Princeagezinweke@gmail.com</a>
+                    <a href="mailto:Princeagezinweke@gmail.com">Princeagezinweke@gmail.com</a>
                   </p>
                 </div>
               </div>
