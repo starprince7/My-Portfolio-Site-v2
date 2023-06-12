@@ -19,12 +19,11 @@ class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="I'm a software developer from Lagos, Nigeria.
-                      My focus is on providing simple yet elegant 
-                      solutions to people and small businesses in
-                      the shortest amount of time."
+            content="Prince Nweke is a highly skilled software developer based
+            in Lagos, Nigeria, specializing in web technologies and
+            best practices."
           />
-          <meta name="author" content="Prince Agezichukwu Nweke" />
+          <meta name="author" content="Prince Nweke A." />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           {/* Google Fonts */}
           <link
