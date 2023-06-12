@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ModalVideo from "react-modal-video";
 import "react-modal-video/css/modal-video.css";
 
-const VideoWithTestimonials = () => {
+const AboutDescription = () => {
   const [isOpen, setOpen] = React.useState(false);
   React.useEffect(() => {
     console.clear();
@@ -30,7 +30,6 @@ const VideoWithTestimonials = () => {
           <div className="row">
             <div className="col-lg-6">
               <div className="vid-area">
-
                 <div className="cont">
                   <h1 className="wow" data-splitting>
                     HELLO, <br /> README
@@ -45,7 +44,7 @@ const VideoWithTestimonials = () => {
                     &lt;/&gt;
                   </h6>
                   <h4 className="wow fadeInLeft" data-wow-delay=".5s">
-                    Hi, My name is Prince
+                    About,
                   </h4>
                 </div>
                 <Slider
@@ -55,15 +54,15 @@ const VideoWithTestimonials = () => {
                 >
                   <div className="item">
                     <p>
-                      I&apos;m a software developer from Lagos, Nigeria.
-                      With my proficiency in contemporary web technologies 
-                      and software development best practices,
-                      my primary goal is to provide people and small 
-                      businesses with simple yet elegant solutions 
-                      in the smallest amount of time. I am confident in what I do. One of 
-                      my ambitions is to become a solution-driven software 
-                      engineer by using my skill set to tackling dynamic 
-                      difficulties.
+                      "Prince Nweke: Proficient Software Developer in Web
+                      Technologies and Best Practices from Lagos, Nigeria"
+                      "Prince Nweke is a highly skilled software developer based
+                      in Lagos, Nigeria, specializing in web technologies and
+                      best practices. With a focus on providing effective
+                      solutions to individuals and small businesses in a timely
+                      manner, I am confident in my ability to thrive as a
+                      solution-driven software engineer capable of overcoming
+                      dynamic difficulties.
                     </p>
                   </div>
                 </Slider>
@@ -76,4 +75,4 @@ const VideoWithTestimonials = () => {
   );
 };
 
-export default VideoWithTestimonials;
+export default AboutDescription;

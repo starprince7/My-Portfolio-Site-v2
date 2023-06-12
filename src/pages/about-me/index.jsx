@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../components/Footer";
 import NavbarFullMenu from "../../components/Navbar-full-menu/navbar-full-menu";
 import SkillsCircle from "../../components/Skills-circle";
-import VideoWithTestimonials from "../../components/Video-with-testimonials";
+import AboutDescription from "../../components/AboutDescription";
 import DarkTheme from "../../layouts/Dark";
 
 const AboutDark = () => {
@@ -11,7 +11,7 @@ const AboutDark = () => {
     return (
         <DarkTheme>
             <NavbarFullMenu />
-            <VideoWithTestimonials />
+            <AboutDescription />
             <SkillsCircle subBG theme="dark" />
             <Footer />
         </DarkTheme>

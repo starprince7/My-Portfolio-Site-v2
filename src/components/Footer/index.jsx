@@ -46,13 +46,13 @@ const Footer = () => {
                   <a target="_blank" rel="noreferrer" href="https://github.com/starprince7/" className="icon">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://www.linkedin.com/in/prince-nweke-295a5b191/" className="icon">
+                  <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/prince-nweke-295a5b191/" className="icon">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/starprince_dev" className="icon">
+                  <a target="_blank" rel="noreferrer" href="https://twitter.com/dev_starprince" className="icon">
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href="https://www.instagram.com/starprince_dev/" className="icon">
+                  <a target="_blank" rel="noreferrer" href="https://www.instagram.com/devstarprince/" className="icon">
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>

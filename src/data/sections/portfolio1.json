@@ -5,38 +5,78 @@
     "title": "Google.com (clone) G-search",
     "tags": ["Next.js", "Google search API", "TailWind-CSS"],
     "filterCategory": ["web"],
-    "url": "https://g-search-kappa.vercel.app/"
+    "url": "https://g-search-kappa.vercel.app/",
+    "height": 300,
+    "width": 600
   },
   {
     "id": 2,
-    "image": "/img/portfolio/projects/ecom-stripe.png",
-    "title": "E-commerce App with Stripe Payment",
-    "tags": ["React.js", "Node.js", "Stripe Payment API"],
-    "filterCategory": ["web"],
-    "url": "https://safe-tor-40287.herokuapp.com/"
+    "image": "/img/portfolio/projects/react-native-naira.png",
+    "title": "NPM: React Native Naira",
+    "tags": ["NPM", "YARN", "React Native", "Money"],
+    "filterCategory": ["npmPackages"],
+    "url": "https://www.npmjs.com/package/react-native-naira",
+    "height": 500,
+    "width": 600
   },
   {
     "id": 3,
+    "image": "/img/portfolio/projects/litestudios.png",
+    "title": "LiteStudios Website",
+    "tags": ["Node.js", "Vanilla JS", "G-Sap", "Materialize CSS", "HTML"],
+    "filterCategory": ["web"],
+    "url": "https://musing-ride-4b81d9.netlify.app/",
+    "height": 300,
+    "width": 600
+  },
+  {
+    "id": 4,
     "image": "/img/portfolio/projects/blog-screenshot.png",
     "title": "Blog Website",
     "tags": ["ejs", "Node.js"],
     "filterCategory": ["web"],
-    "url": "https://enigmatic-bayou-62084.herokuapp.com/login"
-  },
-  {
-    "id": 4,
-    "image": "/img/portfolio/projects/konga-screenshot.png",
-    "title": "E-commerce Application (Konga.com Clone)",
-    "tags": ["React.js", "Node.js", "Paystack Payment API"],
-    "filterCategory": ["web"],
-    "url": "https://enigmatic-stream-91182.herokuapp.com"
+    "url": "https://blog-starprince.onrender.com/login",
+    "height": 400,
+    "width": 600
   },
   {
     "id": 5,
-    "image": "/img/portfolio/projects/funmate-screenshot.png",
-    "title": "Funmate. Dating app  4Singles",
-    "tags": ["Next.js", "Material UI", "TailWind-CSS"],
+    "image": "/img/portfolio/projects/viss_store_app.png",
+    "title": "VISS STORE APP",
+    "tags": ["React Native", "Expo", "Redux ToolKit", "TailWind-CSS"],
     "filterCategory": ["mobileApps"],
-    "url": "https://funmate.vercel.app/login"
+    "url": "/img/portfolio/projects/viss_store_app.png",
+    "height": 650,
+    "width": 600
+  },
+  {
+    "id": 6,
+    "image": "/img/portfolio/projects/ecom-stripe.png",
+    "title": "E-commerce App with Stripe Payment",
+    "tags": ["React.js", "Node.js", "Stripe Payment API"],
+    "filterCategory": ["web"],
+    "url": "https://safe-tor-40287.herokuapp.com/",
+    "height": 400,
+    "width": 600
+  },
+  {
+    "id": 7,
+    "image": "/img/portfolio/projects/konga-screenshot.png",
+    "title": "Konga.com (Clone)",
+    "tags": ["React.js", "Node.js", "Paystack Payment API"],
+    "filterCategory": ["web"],
+    "url": "https://enigmatic-stream-91182.herokuapp.com",
+    "height": 300,
+    "width": 600
+  },
+  {
+    "id": 8,
+    "image": "/img/portfolio/projects/funmate-screenshot.png",
+    "title": "Funmate - Dating WebApp",
+    "tags": ["Next.js", "Material UI", "TailWind-CSS"],
+    "filterCategory": ["web"],
+    "url": "https://funmate.vercel.app/login",
+    "height": 300,
+    "width": 600
   }
 ]

@@ -1,28 +1,28 @@
 [
   {
     "id": 1,
-    "title": { "first": "Hi, I am", "second": "Prince." },
+    "title": { "first": "Hi, I am", "second": "starprince." },
     "image": "/img/portfolio/full2/prince_white_bg.JPG",
     "sub": "Design",
     "link": "/#"
   },
   {
     "id": 2,
-    "title": { "first": "I build fullstack", "second": "apps." },
+    "title": { "first": "Passionate About", "second": "Technology." },
     "image": "/img/portfolio/full2/1.jpg",
     "sub": "Design",
     "link": "/about-me"
   },
   {
     "id": 3,
-    "title": { "first": "Click, to see", "second": "> My works." },
+    "title": { "first": "Here are my", "second": ">>Projects." },
     "image": "/img/portfolio/full2/7.jpg",
     "sub": "Design",
     "link": "/portfolio"
   },
   {
     "id": 4,
-    "title": { "first": "Let's discuss your idea,", "second": "Reach me >" },
+    "title": { "first": "Get in", "second": ">>Touch" },
     "image": "/img/portfolio/full2/prince_profile.JPG",
     "sub": "Design",
     "link": "/contact"
