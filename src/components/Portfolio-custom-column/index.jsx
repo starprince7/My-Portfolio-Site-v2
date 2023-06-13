@@ -29,7 +29,9 @@ const PortfolioCustomColumn = ({
 
     if (!count || count < 1) {
       localStorage.setItem("Refresh_count", JSON.stringify(1));
-      router.reload();
+      setTimeout(() => {
+        router.reload();
+      }, 300)
     }
   }, []);
 
