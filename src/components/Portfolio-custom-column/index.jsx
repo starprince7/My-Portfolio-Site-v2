@@ -5,7 +5,6 @@ import Split from "../Split";
 import Link from "next/link";
 import initIsotope from "../../common/initIsotope";
 import portfolio1Data from "../../data/sections/portfolio1.json";
-import Image from "next/image";
 
 const PortfolioCustomColumn = ({
   column,
@@ -98,7 +97,7 @@ const PortfolioCustomColumn = ({
                 <div className="item-img">
                   <a href={url} target="_blank" rel="noreferrer">
                     <a className="imago wow">
-                      <Image width={width} height={height} src={image} alt="image" />
+                      <img loading="eager" width={width} height={height} src={image} alt="image" />
                       <div className="item-img-overlay"></div>
                     </a>
                   </a>

@@ -13,7 +13,7 @@
     "id": 2,
     "image": "/img/portfolio/projects/react-native-naira.png",
     "title": "NPM: React Native Naira",
-    "tags": ["NPM", "YARN", "React Native", "Money"],
+    "tags": ["NPM", "YARN", "React Native", "Currency", "Money"],
     "filterCategory": ["npmPackages"],
     "url": "https://www.npmjs.com/package/react-native-naira",
     "height": 500,
