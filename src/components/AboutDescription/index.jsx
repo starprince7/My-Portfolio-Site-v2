@@ -54,15 +54,15 @@ const AboutDescription = () => {
                 >
                   <div className="item">
                     <p>
-                      Prince Nweke: Proficient Software Developer in Web
-                      Technologies and Best Practices from Lagos, Nigeria.
-                      Prince Nweke is a highly skilled software developer based
-                      in Lagos, Nigeria, specializing in web technologies and
-                      best practices. With a focus on providing effective
-                      solutions to individuals and small businesses in a timely
-                      manner, I am confident in my ability to thrive as a
-                      solution-driven software engineer capable of overcoming
-                      dynamic difficulties.
+                      Prince Nweke: Proficient Software Developer experienced in
+                      Web Technologies and Best Practices from Lagos, Nigeria.
+                      Prince is a highly skilled software developer based in
+                      Lagos, Nigeria. Specializing in web technologies and
+                      software development best practices. With a focus on
+                      providing effective solutions to individuals and small
+                      businesses in a timely manner, I am confident in my
+                      ability to thrive as a solution-driven software engineer
+                      capable of overcoming dynamic difficulties.
                     </p>
                   </div>
                 </Slider>

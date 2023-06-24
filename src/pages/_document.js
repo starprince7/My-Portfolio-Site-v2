@@ -15,13 +15,13 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="keywords"
-            content="Prince Nweke, prince, nweke, prince nweke, javascript developer, software developer, software engineer, fullstack, developer"
+            content="Prince Nweke, starprince, dev_starprince, @dev_starprince, Starprince, prince, nweke, prince nweke, javascript developer, software developer, software engineer, fullstack, developer"
           />
           <meta
             name="description"
             content="Prince Nweke is a highly skilled software developer based
             in Lagos, Nigeria, specializing in web technologies and
-            best practices."
+            best practices, with a focus on providing effective solutions to individuals and small businesses"
           />
           <meta name="author" content="Prince Nweke A." />
           <link rel="shortcut icon" href="/img/favicon.ico" />
