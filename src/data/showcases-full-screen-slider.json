@@ -1,28 +1,28 @@
 [
   {
     "id": 1,
-    "title": { "first": "Hi, I am", "second": "starprince." },
-    "image": "/img/portfolio/full2/prince_white_bg.JPG",
+    "title": { "first": "Hi, I am", "second": "prince," },
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81rN1eR8hiAq0DGhuGDA5jnVuQgKLSXwQJN6frsMMkcwmA3T9JOAtxtPfYrI1ogbCbG1fqS896nvRXqFcJTR0LngmgZ_Og=w2408-h1814",
     "sub": "Design",
     "link": "/#"
   },
   {
     "id": 2,
-    "title": { "first": "Passionate About", "second": "Technology." },
+    "title": { "first": "I'm passionate About", "second": "Software." },
     "image": "/img/portfolio/full2/1.jpg",
     "sub": "Design",
     "link": "/about-me"
   },
   {
     "id": 3,
-    "title": { "first": "Here are my", "second": ">>Projects." },
+    "title": { "first": "Here are my", "second": ">> works." },
     "image": "/img/portfolio/full2/7.jpg",
     "sub": "Design",
     "link": "/portfolio"
   },
   {
     "id": 4,
-    "title": { "first": "Get in", "second": ">>Touch" },
+    "title": { "first": "Let's get in touch", "second": ">> connect" },
     "image": "/img/portfolio/full2/prince_profile.JPG",
     "sub": "Design",
     "link": "/contact"
