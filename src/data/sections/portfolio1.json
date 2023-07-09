@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/img/portfolio/projects/g-search-screenshot.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904744/princenweke.com/g-search-screenshot_dowar8.png",
     "title": "Google.com (clone) G-search",
     "tags": ["Next.js", "Google search API", "TailWind-CSS"],
     "filterCategory": ["web"],
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "image": "/img/portfolio/projects/react-native-naira.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904857/princenweke.com/react-native-naira_r2blsd.png",
     "title": "NPM PACKAGE: React Native Naira",
     "tags": ["NPM", "YARN", "React Native", "Currency", "Money"],
     "filterCategory": ["npmPackages"],
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "image": "/img/portfolio/projects/litestudios.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904821/princenweke.com/litestudios_cnylnt.png",
     "title": "LiteStudios Website",
     "tags": ["Node.js", "Vanilla JS", "G-Sap", "Materialize CSS", "HTML"],
     "filterCategory": ["web"],
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "image": "/img/portfolio/projects/blog-screenshot.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904724/princenweke.com/blog-screenshot_ktjt6f.png",
     "title": "Blog Website",
     "tags": ["ejs", "Node.js"],
     "filterCategory": ["web"],
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "image": "/img/portfolio/projects/viss_store_app.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904822/princenweke.com/viss_store_app_wytzuy.png",
     "title": "VISS STORE APP",
     "tags": ["React Native", "Expo", "Redux ToolKit", "TailWind-CSS"],
     "filterCategory": ["mobileApps"],
@@ -51,7 +51,7 @@
   },
   {
     "id": 6,
-    "image": "/img/portfolio/projects/ecom-stripe.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904794/princenweke.com/ecom-stripe_bo3szn.png",
     "title": "E-commerce App with Stripe Payment",
     "tags": ["React.js", "Node.js", "Stripe Payment API"],
     "filterCategory": ["web"],
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "image": "/img/portfolio/projects/konga-screenshot.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904785/princenweke.com/konga-screenshot_z22e7u.png",
     "title": "Konga.com (Clone)",
     "tags": ["React.js", "Node.js", "Paystack Payment API"],
     "filterCategory": ["web"],
@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "image": "/img/portfolio/projects/funmate-screenshot.png",
+    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_720/v1688904788/princenweke.com/funmate-screenshot_vdugkd.png",
     "title": "Funmate - Dating WebApp",
     "tags": ["Next.js", "Material UI", "TailWind-CSS"],
     "filterCategory": ["web"],
