@@ -16,7 +16,6 @@ import "swiper/css/mousewheel";
 import removeSlashFromPagination from "../../common/removeSlashFromPagination";
 // Imports End
 
-
 SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
 
 const ShowcasesFullScreen = () => {
@@ -25,7 +24,7 @@ const ShowcasesFullScreen = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setLoad(false);
-      removeSlashFromPagination()
+      removeSlashFromPagination();
     }, 1000);
   }, []);
 
@@ -46,8 +45,8 @@ const ShowcasesFullScreen = () => {
               nextEl: navigationNextRef.current,
             }}
             pagination={{
-                clickable: true,
-                type: "fraction",
+              clickable: true,
+              type: "fraction",
               el: paginationRef.current,
             }}
             onBeforeInit={(swiper) => {
@@ -93,19 +92,17 @@ const ShowcasesFullScreen = () => {
                       <div className="col-lg-10 offset-lg-1">
                         <div className="caption">
                           <h1>
-                            <Link href={slide.link}>
-                              <a>
-                                <div
-                                  className="stroke mr-2"
-                                  data-swiper-parallax="-2000"
-                                >
-                                  {slide.title.first}
-                                </div>
-                                <span data-swiper-parallax="-5000">
-                                  {slide.title.second}
-                                </span>
-                              </a>
-                            </Link>
+                            <a href={slide.link}>
+                              <div
+                                className="stroke mr-2"
+                                data-swiper-parallax="-2000"
+                              >
+                                {slide.title.first}
+                              </div>
+                              <span data-swiper-parallax="-5000">
+                                {slide.title.second}
+                              </span>
+                            </a>
                           </h1>
                         </div>
                       </div>
