@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
+import blogArticles from "../../data/blog-articles";
 
 const BlogStanderd = () => {
   return (
@@ -9,184 +10,64 @@ const BlogStanderd = () => {
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts">
-              <div className="item mb-80">
-                <div className="img">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a>
-                      <img src="/img/blog/b1.jpg" alt="" />
-                    </a>
-                  </Link>
-                </div>
-                <div className="content">
-                  <div className="row">
-                    <div className="col-10">
-                      <a href="#0" className="date">
-                        <span className="num">07</span>
-                        <span>August</span>
+              {blogArticles.map((article) => (
+                <div className="item mb-80">
+                  {/* Image Section - Start */}
+                  <div className="img">
+                    <Link href={article.articleUrl}>
+                      <a>
+                        <img
+                          src={article.articleImage}
+                          alt={article.articleTitle}
+                        />
                       </a>
-                      <div className="tags">
-                        <a href="#0">WordPress</a>
-                        <a href="#0">Themeforest</a>
-                        <a href="#0">Avo</a>
-                      </div>
-                      <h4 className="title">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a>Build a Beautiful Blog With Ease</a>
-                        </Link>
-                      </h4>
-                      <p>
-                        My job is simple and sophisticated, so it is possible to
-                        describe and simple, and flowery language. I love the
-                        feel and sophistication of its superiority. I like
-                        people with a keen mind and at the same time easy to
-                        talk to. These qualities can be combined perfectly
-                        natural. However, things like people look miserable, if
-                        these properties are connected.
-                      </p>
-                      <Link href="/blog-details/blog-details-dark">
-                        <a className="simple-btn mt-30">Read More</a>
-                      </Link>
-                    </div>
+                    </Link>
                   </div>
-                </div>
-              </div>
-              <div className="item mb-80">
-                <div className="img">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a>
-                      <img src="/img/blog/b2.jpg" alt="" />
-                    </a>
-                  </Link>
-                </div>
-                <div className="content">
-                  <div className="row">
-                    <div className="col-10">
-                      <a href="#0" className="date">
-                        <span className="num">07</span>
-                        <span>August</span>
-                      </a>
-                      <div className="tags">
-                        <a href="#0">WordPress</a>
-                        <a href="#0">Themeforest</a>
-                        <a href="#0">Avo</a>
-                      </div>
-                      <h4 className="title">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a>Build a Beautiful Blog With Ease</a>
-                        </Link>
-                      </h4>
-                      <p>
-                        My job is simple and sophisticated, so it is possible to
-                        describe and simple, and flowery language. I love the
-                        feel and sophistication of its superiority. I like
-                        people with a keen mind and at the same time easy to
-                        talk to. These qualities can be combined perfectly
-                        natural. However, things like people look miserable, if
-                        these properties are connected.
-                      </p>
-                      <Link href="/blog-details/blog-details-dark">
-                        <a className="simple-btn mt-30">Read More</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item mb-80">
-                <div className="img">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a>
-                      <img src="/img/blog/b3.jpg" alt="" />
-                    </a>
-                  </Link>
-                </div>
-                <div className="content">
-                  <div className="row">
-                    <div className="col-10">
-                      <a href="#0" className="date">
-                        <span className="num">07</span>
-                        <span>August</span>
-                      </a>
-                      <div className="tags">
-                        <a href="#0">WordPress</a>
-                        <a href="#0">Themeforest</a>
-                        <a href="#0">Avo</a>
-                      </div>
-                      <h4 className="title">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a>Build a Beautiful Blog With Ease</a>
-                        </Link>
-                      </h4>
-                      <p>
-                        My job is simple and sophisticated, so it is possible to
-                        describe and simple, and flowery language. I love the
-                        feel and sophistication of its superiority. I like
-                        people with a keen mind and at the same time easy to
-                        talk to. These qualities can be combined perfectly
-                        natural. However, things like people look miserable, if
-                        these properties are connected.
-                      </p>
-                      <Link href="/blog-details/blog-details-dark">
-                        <a className="simple-btn mt-30">Read More</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="item">
-                <div className="img">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a>
-                      <img src="/img/blog/b4.jpg" alt="" />
-                    </a>
-                  </Link>
-                </div>
-                <div className="content">
-                  <div className="row">
-                    <div className="col-10">
-                      <a href="#0" className="date">
-                        <span className="num">07</span>
-                        <span>August</span>
-                      </a>
-                      <div className="tags">
-                        <a href="#0">WordPress</a>
-                        <a href="#0">Themeforest</a>
-                        <a href="#0">Avo</a>
-                      </div>
-                      <h4 className="title">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a>Build a Beautiful Blog With Ease</a>
-                        </Link>
-                      </h4>
-                      <p>
-                        My job is simple and sophisticated, so it is possible to
-                        describe and simple, and flowery language. I love the
-                        feel and sophistication of its superiority. I like
-                        people with a keen mind and at the same time easy to
-                        talk to. These qualities can be combined perfectly
-                        natural. However, things like people look miserable, if
-                        these properties are connected.
-                      </p>
-                      <Link href="/blog-details/blog-details-dark">
-                        <a className="simple-btn mt-30">Read More</a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Image Section - End */}
 
-              <div className="pagination">
-                <span className="active">
-                  <a href="#0">1</a>
-                </span>
-                <span>
-                  <a href="#0">2</a>
-                </span>
-                <span>
-                  <a href="#0">
-                    <i className="fas fa-angle-right"></i>
-                  </a>
-                </span>
-              </div>
+                  {/* Content Section - Start */}
+                  <div className="content">
+                    <div className="row">
+                      <div className="col-10">
+                        <a href="#0" className="date">
+                          <span className="num">{article.articleDate}</span>
+                        </a>
+                        <div className="tags">
+                          {article.keyWords.map((word) => (
+                            <a href="#0">{word}</a>
+                          ))}
+                        </div>
+                        <h4 className="title">
+                          <Link href="/blog-details/blog-details-dark">
+                            <a>{article.articleTitle}</a>
+                          </Link>
+                        </h4>
+                        <p>{article.articleSnippet}</p>
+                        <Link href={article.articleUrl}>
+                          <a className="simple-btn mt-30">Read More</a>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Content Section - End */}
+                </div>
+              ))}
+
+              {blogArticles.length > 10 && (
+                <div className="pagination">
+                  <span className="active">
+                    <a href="#0">1</a>
+                  </span>
+                  <span>
+                    <a href="#0">2</a>
+                  </span>
+                  <span>
+                    <a href="#0">
+                      <i className="fas fa-angle-right"></i>
+                    </a>
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

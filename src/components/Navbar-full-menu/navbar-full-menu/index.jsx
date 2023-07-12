@@ -68,10 +68,21 @@ const NavbarFullMenu = ({ theme, lr }) => {
                       </Link>
                     </div>
                   </li>
+
+                  <li>
+                    <div className="o-hidden">
+                      <Link href="/blog">
+                        <a className="link">
+                          <span className="nm">03.</span>Blog
+                        </a>
+                      </Link>
+                    </div>
+                  </li>
+
                   <li>
                     <div className="o-hidden">
                         <a href="/portfolio" className="link">
-                          <span className="nm">03.</span>Portfolio
+                          <span className="nm">04.</span>Portfolio
                         </a>
                     </div>
                   </li>
@@ -89,7 +100,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                     <div className="o-hidden">
                       <Link href="/resume/Prince_Nweke_Resume.PDF">
                         <a className="link">
-                          <span className="nm">05.</span>Resume
+                          <span className="nm">06.</span>Resume
                         </a>
                       </Link>
                     </div>
@@ -102,7 +113,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
               <div className="cont-info">
                 <div className="item">
                   <h6>Phone :</h6>
-                  <a href="tel:+2349024847299"> <p>+234 902 484 7299</p></a> <br />
+                  {/* <a href="tel:+2349024847299"> <p>+234 902 484 7299</p></a> <br /> */}
                   <a href="tel:+2347037130120"><p>+234 703 713 0120</p></a>
                 </div>
                 <div className="item">
