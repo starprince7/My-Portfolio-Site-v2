@@ -19,9 +19,11 @@ class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="Prince Nweke is a highly skilled software developer based
-            in Lagos, Nigeria, specializing in web technologies and
-            best practices, with a focus on providing effective solutions to individuals and small businesses"
+            content="Prince Nweke is an accomplished software engineer
+            based in Lagos, Nigeria. He specialises in web
+            development and standard practices with an emphasis on
+            offering practical solutions to people and small
+            enterprises."
           />
           <meta name="author" content="Prince Nweke A." />
           <link rel="shortcut icon" href="/img/favicon.ico" />
