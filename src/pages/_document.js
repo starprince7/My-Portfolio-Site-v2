@@ -26,6 +26,21 @@ class MyDocument extends Document {
             enterprises."
           />
           <meta name="author" content="Prince Nweke A." />
+          <meta name="og:title" content="Prince Nweke Software developer" />
+          <meta name="og:type" content="website" />
+          <meta name="og:site_name" content="princenweke" />
+          <meta
+            name="og:description"
+            content="Prince Nweke is an accomplished software engineer
+            based in Lagos, Nigeria. He specialises in web
+            development and standard practices with an emphasis on
+            offering practical solutions to people and small
+            enterprises."
+          />
+          <meta
+            name="og:image"
+            content="https://res.cloudinary.com/starprince-dev/image/upload/w_700/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg"
+          />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           {/* Google Fonts */}
           <link

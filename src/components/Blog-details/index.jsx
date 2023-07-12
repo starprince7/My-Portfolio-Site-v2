@@ -167,8 +167,8 @@ const BlogDetails = ({ article }) => {
                           </a> */}
                         </div>
                         <div className="tags">
-                          {keyWords.map((word) => (
-                            <a href="#0">{word},</a>
+                          {keyWords.map((word, index) => (
+                            <a href="#0" key={index}>{word},</a>
                           ))}
                         </div>
                       </div>

@@ -10,8 +10,8 @@ const BlogStanderd = () => {
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts">
-              {blogArticles.map((article) => (
-                <div className="item mb-80">
+              {blogArticles.map((article, index) => (
+                <div className="item mb-80" key={index}>
                   {/* Image Section - Start */}
                   <div className="img">
                     <Link href={article.articleUrl}>
@@ -33,8 +33,8 @@ const BlogStanderd = () => {
                           <span className="num">{article.articleDate}</span>
                         </a>
                         <div className="tags">
-                          {article.keyWords.map((word) => (
-                            <a href="#0">{word}</a>
+                          {article.keyWords.map((word, index) => (
+                            <a href="#0" key={index}>{word}</a>
                           ))}
                         </div>
                         <h4 className="title">
