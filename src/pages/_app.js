@@ -7,6 +7,22 @@ import LoadingScreen from "../components/Loading-Screen";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+  React.useEffect(() => {
+    // Find all elements with the "text" class
+    const elements = document.getElementsByTagName("code");
+    console.log("The elements: ", elements)
+
+    // Loop through the elements
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+
+      // Check if the text ends with '()'
+      if (/\(\)$/.test(element.textContent)) {
+        element.classList.add("function");
+      }
+    }
+  }, []);
+
   return (
     <>
       <Head>

@@ -4,13 +4,14 @@ import Link from "next/link";
 import blogArticles from "../../data/blog-articles";
 
 const BlogStanderd = () => {
+  const reversedArticles = blogArticles.slice().reverse();
   return (
     <section className="blog-pg section-padding pt-0">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="posts">
-              {blogArticles.map((article, index) => (
+              {reversedArticles.map((article, index) => (
                 <div className="item mb-80" key={index}>
                   {/* Image Section - Start */}
                   <div className="img">
@@ -38,7 +39,7 @@ const BlogStanderd = () => {
                           ))}
                         </div>
                         <h4 className="title">
-                          <Link href="/blog-details/blog-details-dark">
+                          <Link href={article.articleUrl}>
                             <a>{article.articleTitle}</a>
                           </Link>
                         </h4>

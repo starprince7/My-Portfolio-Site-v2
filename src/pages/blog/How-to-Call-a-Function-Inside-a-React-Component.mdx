@@ -1,0 +1,134 @@
+import DarkTheme from "../../layouts/Dark";
+import NavbarFullMenu from "../../components/Navbar-full-menu/navbar-full-menu";
+import MdxTitle from "../../components/Mdx-layout/mdx-title";
+import MdxContentBody from "../../components/Mdx-layout/mdx-content-body";
+import CodeBlock from "../../components/CodeHighlighter";
+
+<DarkTheme>
+  <NavbarFullMenu />
+  <MdxTitle>
+      # How to Call a Function Inside a React Component - A Step-by-Step Guide
+  </MdxTitle>
+  <MdxContentBody
+    articleTitle="How to Call a Function Inside a React Component - A Step-by-Step Guide"
+    keyWords={["React.js", "Javascript", "Frontend", "Software development"]}
+    articleImageSrc="https://images.unsplash.com/photo-1485460535564-844461f37f77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGVhcm4lMjBjb2Rpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+  >
+    Discover how to call a function inside a component effortlessly. Learn the best practices to ensure smooth function invocation within your React components.
+
+    If you're here to find out how to call a function defined within your React component, you've come to the right place. In this article, I'll guide you through the process, providing clear instructions to help you accomplish this task.
+
+    #### How You Call a Function Inside a React Component
+
+    We will define a function that will log to the console "HELLO WORLD".
+
+    ( 1. ) Import the `useRef` hook from React in the parent component and invoke it.
+
+    ```js
+    import { useRef } from 'react'
+
+    ```
+    <br />
+
+
+    ( 2. ) Pass the `childRef` as a prop to the child component.
+
+    ```js
+    function ParentComponent() {
+        const childRef = useRef(null);
+
+        return (
+            <div>
+            <ChildComponent childRef={childRef} />
+            <button onClick={() => childRef.current.childFunction()}>Call Child Function</button>
+            </div>
+        );
+    }
+    ```
+    <br />
+
+    ( 3. ) In the child component, receive the `childRef` prop as a parameter.
+
+    ```js
+        function ChildComponent(props) {
+            // Extract the `childRef` from the props object.
+            const { childRef } = props;
+
+        // ...
+        }
+    ```
+    <br />
+
+    ( 4. ) Import the `useEffect` hook from React in this child component and invoke it. Remember to pass an empty dependency array as the second argument after the arrow function.
+
+    ```js
+    import { useEffect } from 'react'
+
+    function ChildComponent(props) {
+        // Extract the `childRef` from the props object.
+        const { childRef } = props;
+
+        useEffect(() => { }, []);
+
+        // ...
+    }
+
+    ```
+    <br />
+
+    ( 5. ) Within the 'useEffect' hook, assign an anonymous function to the 'current' property of the 'childRef' object.
+
+     ```js
+    import { useEffect } from 'react'
+
+    function ChildComponent(props) {
+        // Extract the `childRef` from the props object.
+        const { childRef } = props;
+
+        const anonymousFunc = () => {
+                // Define the logic of the function
+                console.log("HELLO WORLD")
+        };
+
+        useEffect(() => {
+            childRef.current.childFunction = anonymousFunc
+        }, []);
+
+        // ...
+    }
+
+    ```
+    <br />
+
+    ( 6. ) Back in the parent component file, you can now call the `function` defined in this child component using the `childRef` object. Pay attention to the `handleButtonClick` function definition.
+
+    ```js
+    import { useRef } from 'react'
+
+    function ParentComponent() {
+        const childRef = useRef(null);
+
+        const handleButtonClick = () => {
+            // Call the child component's function
+            childRef.current.childFunction();
+        };
+
+        return (
+            <div>
+            <ChildComponent childRef={childRef} />
+            <button onClick={handleButtonClick}>Call Child Function</button>
+            </div>
+        );
+    }
+
+    ```
+    <br/>
+    <br/>
+
+    #### Conclusion
+
+    By following these simple steps, you can easily call a function defined in a child component from the parent component. Utilizing a ref to access the child component's instance allows for seamless function invocation. Implement these techniques to enhance your React development workflow.
+
+</MdxContentBody>
+
+</DarkTheme>

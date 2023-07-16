@@ -1,17 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Formik, Form, Field } from "formik";
 
-const BlogDetails = ({ article }) => {
-  const {
-    articleImage,
-    articleBody,
-    articleTitle,
-    slug,
-    articleDate,
-    keyWords,
-  } = article;
+const MdxContentBody = ({
+  children,
+  articleTitle,
+  keyWords = [],
+  articleImageSrc = "",
+}) => {
+  const router = useRouter();
+  const [, slug] = router.pathname.split("/blog/"); // or const slug = router.pathname.split("/blog/")[1]
+
   function validateEmail(value) {
     let error;
     if (!value) {
@@ -21,7 +22,9 @@ const BlogDetails = ({ article }) => {
     }
     return error;
   }
+
   const sendComment = (ms) => new Promise((r) => setTimeout(r, ms));
+
   return (
     <section className="blog-pg single section-padding pt-0">
       <div className="container">
@@ -29,126 +32,14 @@ const BlogDetails = ({ article }) => {
           <div className="col-lg-11">
             <div className="post">
               <div className="img">
-                <img src={articleImage} alt="" />
+                <img src={articleImageSrc} alt={slug} style={{maxHeight: 650, objectFit: 'cover'}} />
               </div>
               <div className="content pt-20">
                 <div className="row justify-content-center">
                   <div className="col-lg-10">
                     <div className="cont">
-                      <div className="spacial">
-                        <p>
-                          We've all made mistakes while working on a codebase as
-                          developers and needed to undo a recent Git pull.
-                          Undoing a Git pull can be a difficult operation,
-                          whether it's because of an issue with the code that
-                          was pulled or a conflict with local changes. But with
-                          some knowledge and comprehension of Git's inner
-                          workings, it's a process that can be readily
-                          accomplished.
-                        </p>
-                      </div>
-                      <p>
-                        Understanding the distinction between a merging and a
-                        rebase is the first step in redoing a Git pull. While
-                        Git replays changes from one branch on top of another
-                        during a rebase, it merges changes from one branch with
-                        another during a merge. In most situations, removing a
-                        pull entails redoing a merging.
-                      </p>
-                      <p>
-                        The first step in undoing a merge is to locate the
-                        commit that the merge resulted in. To do this, use the
-                        git log command and search for the commit with the term
-                        "Merge" in the message. The command git revert must be
-                        used after you've located the offending commit and its
-                        hash. By doing this, a new commit will be made that
-                        reverses the modifications made in the initial merging
-                        commit.
-                      </p>
-                      <p>
-                        The procedure becomes slightly more difficult if the
-                        pull was performed using rebase. You must use the git
-                        reset command with the commit hash of the previous state
-                        you want to return to in order to undo a rebase. This
-                        will erase any modifications made after then and return
-                        the branch to its original condition. Remember that any
-                        modifications made following the rebase will be
-                        irretrievably lost.
-                      </p>
-                      <p>
-                        Another way to reverse a pull is to use the commands git
-                        stash to save your modifications, git pull --rebase to
-                        get them, and git stash apply to reapply them.
-                      </p>
+                      {children}
 
-                      <h6>- Conclusion.</h6>
-
-                      <p>
-                        To sum up, undoing a Git pull can be difficult, but with
-                        a little expertise and understanding of Git's inner
-                        workings, it's a task that can be readily accomplished.
-                        Make a copy of your code, use the right command
-                        depending on whether the pull was a merge or a rebase,
-                        and test your code in a development environment before
-                        sending it to production, just to name a few things.
-                      </p>
-
-                      {/* <ul>
-                        <li>
-                          <span>01</span> Integer in volutpat libero.
-                        </li>
-                        <li>
-                          <span>02</span> Vivamus maximus ultricies pulvinar.
-                        </li>
-                        <li>
-                          <span>03</span> priorities that will pop up in any
-                          particular month.
-                        </li>
-                        <li>
-                          <span>04</span> We all intend to plan ahead.
-                        </li>
-                        <li>
-                          <span>05</span> The main component of a healthy env
-                          for self esteem.
-                        </li>
-                      </ul>
-
-                      <div className="quotes text-left">
-                        <code>
-                          const x = "foo";
-                        </code>
-                      </div> */}
-
-                      {/* <div className="quotes text-center">
-                        <p>
-                          Never ever think of giving up. Winners never quit and
-                          quitters never win. Take all negative words out of
-                          your mental dictionary and focus on the solutions with
-                          utmost conviction and patience. The battle is never
-                          lost until you’ve abandon your vision.
-                        </p>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="mb-10">
-                            <img src="/img/blog/single.jpg" alt="" />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="mb-10">
-                            <img src="/img/blog/single.jpg" alt="" />
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        We all intend to plan ahead, but too often let the
-                        day-to-day minutia get in the way of making a calendar
-                        for the year. Sure, you can’t know every detail to
-                        anticipate. Heck, you can’t know half the priorities
-                        that will pop up in any particular month. But you can
-                        plan for big picture seasonality, busy-times, and
-                        events.
-                      </p> */}
                       <div className="share-info">
                         <div className="social">
                           <a>Share:</a>
@@ -167,8 +58,10 @@ const BlogDetails = ({ article }) => {
                           </a> */}
                         </div>
                         <div className="tags">
-                          {keyWords?.map((word, index) => (
-                            <a href="#0" key={index}>{word},</a>
+                          {keyWords.map((word, index) => (
+                            <a href="#0" key={index}>
+                              {word},
+                            </a>
                           ))}
                         </div>
                       </div>
@@ -282,4 +175,4 @@ const BlogDetails = ({ article }) => {
   );
 };
 
-export default BlogDetails;
+export default MdxContentBody;

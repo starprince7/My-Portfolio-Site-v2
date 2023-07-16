@@ -123,3 +123,16 @@ section.next-prog {
 section.team.section-padding {
   overflow: hidden;
 }
+
+pre code {
+  color: #18c0e8d4 !important
+}
+
+pre {
+  background: #1e1e1e !important;
+  padding: 1rem;
+}
+
+.function {
+  color: #e83e8c !important;
+}
