@@ -1,8 +1,35 @@
+import Head from "next/head";
 import DarkTheme from "../../layouts/Dark";
 import NavbarFullMenu from "../../components/Navbar-full-menu/navbar-full-menu";
 import MdxTitle from "../../components/Mdx-layout/mdx-title";
 import MdxContentBody from "../../components/Mdx-layout/mdx-content-body";
 import CodeBlock from "../../components/CodeHighlighter";
+
+<Head>
+  <title>
+    How to Call a Function Inside a React Component - A Step-by-Step Guide
+  </title>
+  <meta
+    name="keywords"
+    content="react.js, react, reactjs, next, next.js, nextjs, function, component, child, child component, parent, parent component, steps"
+  />
+  <meta
+    name="description"
+    content="Discover how to call a function inside a component effortlessly. Learn the best practices to ensure smooth function invocation within your React components."
+  />
+  <meta name="author" content="Prince Nweke Agezi." />
+  <meta name="og:title" content="Prince Nweke Software developer" />
+  <meta name="og:type" content="website" />
+  <meta name="og:site_name" content="princenweke" />
+  <meta
+    name="og:description"
+    content="Discover how to call a function inside a component effortlessly. Learn the best practices to ensure smooth function invocation within your React components."
+  />
+  <meta
+    name="og:image"
+    content="https://images.unsplash.com/photo-1485460535564-844461f37f77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGVhcm4lMjBjb2Rpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+  />
+</Head>
 
 <DarkTheme>
   <NavbarFullMenu />
@@ -29,7 +56,7 @@ import CodeBlock from "../../components/CodeHighlighter";
 
      function ParentComponent() {
         const childRef = useRef(null);
-        
+
         // ...
     }
     ```

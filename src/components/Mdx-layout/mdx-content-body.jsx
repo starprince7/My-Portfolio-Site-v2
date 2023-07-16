@@ -66,14 +66,14 @@ const MdxContentBody = ({
                         </div>
                       </div>
                     </div>
-                    <div className="author">
-                      <div className="author-img">
+                    <div className="author row">
+                      <div className="author-img col-12 mb-3 col-md-6">
                         <img
                           src="https://res.cloudinary.com/starprince-dev/image/upload/ar_1:1,c_fill,e_art:refresh,g_auto,w_1000/v1689117129/princenweke.com/IMG_1183_rmxolk.jpg"
                           alt="author"
                         />
                       </div>
-                      <div className="info">
+                      <div className="info col-sm-12 col-md-6">
                         <h6>
                           <span>author :</span> Prince A. Nweke
                         </h6>
