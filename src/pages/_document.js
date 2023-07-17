@@ -41,6 +41,7 @@ class MyDocument extends Document {
             name="og:image"
             content="https://res.cloudinary.com/starprince-dev/image/upload/w_700/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg"
           />
+          <link rel="canonical" href="https://www.princenweke.com/" />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           {/* Google Fonts */}
           <link
