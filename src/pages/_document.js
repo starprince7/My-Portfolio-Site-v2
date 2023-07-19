@@ -41,6 +41,17 @@ class MyDocument extends Document {
             name="og:image"
             content="https://res.cloudinary.com/starprince-dev/image/upload/w_700/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg"
           />
+          <meta name="twitter:card" content="summary_large_image" /> {/* Specifies the type of card for Twitter */}
+          <meta name="twitter:site" content="@dev_starprince" /> {/* Replace with your Twitter handle */}
+          <meta name="twitter:title" content="Prince Nweke Software developer" />
+          <meta
+            name="twitter:description"
+            content="Prince Nweke is an accomplished software engineer based in Lagos, Nigeria. He specialises in web development and standard practices with an emphasis on offering practical solutions to people and small enterprises."
+          />
+          <meta
+            name="twitter:image"
+            content="https://res.cloudinary.com/starprince-dev/image/upload/w_700/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg"
+          />
           <link rel="canonical" href="https://www.princenweke.com/" />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           {/* Google Fonts */}
