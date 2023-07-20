@@ -184,7 +184,7 @@ const ContactWithMap = () => {
         <div className="container">
           <div className="copyrights text-center mt-0">
             <p>
-              © {new Date().getFullYear()} <a href="#0" className="portfolio-logo-footer"> PRINCE NWEKE</a>
+              © 2022 - {new Date().getFullYear()} <a href="#0" className="portfolio-logo-footer"> PRINCE NWEKE</a>
             </p>
           </div>
         </div>

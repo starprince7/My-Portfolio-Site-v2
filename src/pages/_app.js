@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
+
 import Cursor from "../components/Cursor";
 import ScrollToTop from "../components/Scroll-to-top";
 import LoadingScreen from "../components/Loading-Screen";
@@ -33,6 +35,7 @@ function MyApp({ Component, pageProps }) {
       {/* <LoadingScreen /> */}
       <ScrollToTop />
       <Component {...pageProps} />
+      <Analytics />
 
       <Script id="wow" src="/js/wow.min.js"></Script>
       <Script
