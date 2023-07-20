@@ -98,7 +98,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                   </li>
                   <li>
                     <div className="o-hidden">
-                      <Link href="/resume/Prince_Nweke_Resume.PDF">
+                      <Link href="/resume/Prince_Nweke_Resume_July.pdf">
                         <a className="link">
                           <span className="nm">06.</span>Resume
                         </a>
