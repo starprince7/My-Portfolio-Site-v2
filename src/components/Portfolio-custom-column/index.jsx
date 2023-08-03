@@ -71,6 +71,7 @@ const PortfolioCustomColumn = ({
                   All
                 </span>
                 <span data-filter=".web">Web Apps</span>
+                <span data-filter=".backend">Backend</span>
                 <span data-filter=".mobileApps">Mobile App</span>
                 <span data-filter=".npmPackages">NPM Packages</span>
                 {/* <span data-filter=".Blockchain">Blockchain</span> */}
