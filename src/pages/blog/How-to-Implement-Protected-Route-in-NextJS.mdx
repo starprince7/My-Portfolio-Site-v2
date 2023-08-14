@@ -1,0 +1,305 @@
+import Head from "next/head";
+import DarkTheme from "../../layouts/Dark";
+import NavbarFullMenu from "../../components/Navbar-full-menu/navbar-full-menu";
+import MdxHead from "../../components/Mdx-layout/mdx-head";
+import MdxTitle from "../../components/Mdx-layout/mdx-title";
+import MdxContentBody from "../../components/Mdx-layout/mdx-content-body";
+import CodeBlock from "../../components/CodeHighlighter";
+
+<MdxHead
+  title="Implementing Protected Routes in Next.js: A Step-by-Step Guide with Code Examples"
+  keyWords="react.js, react, reactjs, next, next.js, nextjs, function, component, child, child component, parent, parent component, steps"
+  description="Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them."
+  ogDescription="Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them."
+  ogImage="https://images.unsplash.com/photo-1635602739175-bab409a6e94c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2676&q=80"
+/>
+
+<DarkTheme>
+  <NavbarFullMenu />
+  <MdxTitle>
+      # Implementing Protected Routes in Next.js: A Step-by-Step Guide with Code Examples
+  </MdxTitle>
+   <MdxContentBody
+    articleTitle="Implementing Protected Routes in Next.js: A Step-by-Step Guide with Code Examples"
+    keyWords={["React.js", "Next.js", "Javascript", "Frontend", "Software development"]}
+    articleImageSrc="https://images.unsplash.com/photo-1635602739175-bab409a6e94c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2676&q=80"
+  >
+    Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them. Next.js, a popular React framework, makes it simple to construct secured routes by combining components and authentication logic. I'll walk you through the process of implementing protected routes in a Next.js application, with code examples, in this article.
+    
+    ### **How To Implement Protected Routes in Next.js**
+    Implementing a protected route is done by wrapping the private page with a Protected route component this component will try looking for a user's session token and if this token cannot be found the user will be denied access and then sees a login screen
+
+    ### Prerequisites
+
+    Before we get started, make sure you have the following installed:
+
+    - Node.js (&gt;=12.0.0)
+    - npm (Node Package Manager) or yarn
+
+---
+
+---
+
+---
+
+    ### ****Step 1: Setup A Next.js Application****
+
+    Use the commands listed below to build a new Next.js application if you haven't already.
+
+    ```bash
+    npx create-next-app protected-routes-app
+    ```
+    Change into the directory of this project
+    ```bash
+    cd protected-routes-app
+    ```
+
+    Install some dependencies
+    ```js
+    npm install cookie js-cookie jsonwebtoken
+    ```
+
+---
+
+---
+
+---
+
+    ### ****Step 2: Implementing Authentication Logic****
+    I'll walk you through the process of logging into my application for the sake of this guide.
+
+    Every time you enter your username and password and press "Submit" after validating your login information, my application will issue you a special token known as a session token on successful login. This token contains some limited information about you who just logged in and has been authenticated with the app.
+
+    After successfully logging in, we now need to figure out how to keep hold of the session token as evidence that we have authenticated, or as I like to put, "We have identified ourselves to the application."
+
+    This step is critical because when we finally implement the page protection logic, we may be required to log in again if we no longer have a session token. To prevent losing this token even if the web browser is reloaded, we need to hold onto it, which entails persisting it.
+
+    ```js
+    // pages/api/auth/login.js
+
+    export default async function login(req, res) {
+        await db.connectDB()
+        const { method } = req
+        const { email, password } = req.body
+
+        switch (method) {
+            case 'POST':
+            let account
+
+            try {
+                account = await Account.login(email, password)
+            } catch (e) {
+                const formattedError = accountErrorFormatter(e)
+                res.status(401).json({ error: formattedError, message: e.message })
+                break
+            }
+
+            const token = createSessionToken(account._id, account.role)
+            const MAX_AGE = 24 * 60 * 60
+
+            // Set the cookie
+                    import { serialize } from 'cookie' // `serialize` method helps to set cookies to the browser in a Next.js application.
+            res.setHeader(
+                'Set-Cookie',
+                serialize('session_token', token, {
+                maxAge: MAX_AGE,
+                path: '/',
+                secure: process.env.NODE_ENV === 'production',
+                httpOnly: true,
+                })
+            )
+            res.status(200).json({
+                error: false,
+                message: `Welcome back, ${account.accountInformation.firstName}!`,
+            })
+            break
+            default:
+            res.status(405).json({ error: true, message: 'Method not allowed' })
+            break
+        }
+    }
+    ```
+
+    The file above is a NextJS function handler responsible for authenticating people using my app.
+
+    I'd like to draw your attention to the part of the code where we first create a session token, set it as a cookie, and add it to the response headers. This ensures that the browser receives and stores the information in its cookie storage, allowing our application to access the token, see below.
+    ```js
+    const token = createSessionToken(account._id, account.role)
+    const MAX_AGE = 24 * 60 * 60
+
+    // Set the cookie
+        import { serialize } from 'cookie' // `serialize` method helps to set cookies to the browser in a Next.js application.
+    res.setHeader(
+    'Set-Cookie',
+    serialize('session_token', token, {
+        maxAge: MAX_AGE,
+        path: '/',
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+    })
+    )
+    res.status(200).json({
+    error: false,
+    message: `Welcome back, ${account.accountInformation.firstName}!`,
+    })
+    break
+    ```
+
+      The final task in creating this authentication logic is to wrap the entire app in a session provider, which is solely responsible for ensuring that the child components have access to the authenticated user saved in the session token, but first we need to create this Session Provider component. Take a look at the code below.
+
+      ```js
+      // components/lib/JWTSessionProvider.js
+
+    import React from 'react';
+    import Cookies from 'js-cookie'; // Import the js-cookie library
+    import jwt from 'jsonwebtoken';
+
+    // Create context.
+    const SessionContext = React.createContext(null)
+
+    export default function JWTSessionProvider(){
+        const [decodedSession, setDecodedSession] = React.useState({})
+
+        React.useEffect(() => {
+            // Check if the session_token cookie exists
+        const sessionToken = Cookies.get('session_token');
+            if(!sessionToken) {
+                setDecodedSession({}) // No token, hence set to an empty object!
+            }
+
+            // Verify token.
+            try {
+        const decodedToken = await jwt.verify(sessionToken, 'your_secret_key');
+                setDecodedSession(decodedToken)
+        } catch (error) {
+        console.error('Token verification failed:', error.message);
+        }
+            jwt.verify(
+        sessionToken,
+        'your_secret_key',
+        async (error, decodedToken: any) => {
+            if (error) {
+            setDecodedSession({})
+                    }
+                    setDecodedSession(decodedToken)
+        },
+        );
+        }, [])
+
+        return (
+            <SessionContext.Provider value={decodedSession}>
+                {children}
+            </SessionContext.Provider>
+        )
+    }
+
+
+    // Use Session Hook.
+    export const useSession = () => React.useContext(SessionContext)
+    ```
+    After creating your session provider, wrap the entire application, in this component.
+
+    ```js
+    //pages/_app.js
+
+    import SessionProvider from '@components/lib/JWTSessionProvider'
+
+    export default MyApp = ({ Component, pageProps }) => {
+        return (
+            <SessionProvider>
+                <Component {...pageProps} />
+            </SessionProvider>
+        );
+    };
+
+    ```
+    ------
+    ------
+
+    #### Recap: Step 2 Task Completed
+
+    1). Created or issued a session token.
+
+    2). Kept hold of session token.
+
+    3). Created a session provider component.
+
+    4). Wrapped the entire app in a session provider component.
+
+    ### ****Step 3: Creating a ProtectedRoute Component****
+
+    In your Next.js application, create a new component file called **`ProtectedRoute.js`** inside of the **`components`** folder. This component will handle the logic for protecting routes.
+
+    ```js
+    // components/ProtectedRoute.js
+
+    import React from 'react';
+    import { useRouter } from 'next/router';
+    import { useSession } from '@components/lib/JWTSessionProvider'
+
+    const ProtectedRoute = ({ children }) => {
+    const router = useRouter();
+        const session = useSession();
+
+    React.useEffect(() => {
+        // Check if the user is authenticated, redirect to login if not.
+        if (!session) {
+        router.push('/login'); // Redirect to the login page.
+        }
+    }, [session]);
+
+    return <>{children}</>;
+    };
+
+    export default ProtectedRoute;
+    ```
+    -----
+    -----
+    -----
+
+    ### **Step 4: Using the ProtectedRoute Component**
+
+    Let's now secure a particular route in my application; in this example, I want to protect the **`/dashboard`** route, so create a new file named **`dashboard.js`**in the **`pages`** directory.
+
+    ```js
+    // pages/dashboard.js
+
+    import React from 'react';
+    import ProtectedRoute from '../components/ProtectedRoute';
+
+    const DashboardPage = () => {
+    return (
+        <ProtectedRoute>
+        <div>
+            <h1>Dashboard</h1>
+            {/* Your dashboard content */}
+        </div>
+        </ProtectedRoute>
+    );
+    };
+
+    export default DashboardPage;
+    ```
+    ---
+    ---
+    ---
+    ### ****Step 5: Testing****
+
+    Start your Next.js development server using the command:
+    ```bash
+    npm run dev
+    ```
+    Visit ***`http://localhost:3000/dashboard`*** in your browser. If the user is authenticated, they will see the dashboard content. If not, they will be redirected to the login page (replace `/login` with the actual login route in your application).
+
+    ---
+    ---
+    ---
+    ### ****Conclusion****
+
+    Protected routes in your Next.js application are critical for preserving security and restricting access to specific areas of your site. You may build a comprehensive and secure authentication system for your Next.js application by following the steps provided in this guide and modifying the authentication logic to your needs.
+
+    While this guide gives a simple example, real-world applications may have more sophisticated authentication requirements. Always make sure that your authentication logic is secure and well-tested. Happy coding!
+
+  </MdxContentBody>
+
+</DarkTheme>
