@@ -251,29 +251,29 @@ import CodeBlock from "../../components/CodeHighlighter";
 
     4). Wrapped the entire app in a session provider component.
 
-    ### ****Step 3: Creating a ProtectedRoute Component****
+    ### ****Step 3: Creating a Route Protection Component****
 
-    In your Next.js application, create a new component file called **`ProtectedRoute.js`** inside of the **`components`** folder. This component will handle the logic for protecting routes.
+    In your Next.js application, create a new component file called **`RouteProtection.js`** inside of the **`components`** folder. This component will handle the logic for protecting routes.
 
     ```js
-    // components/ProtectedRoute.js
+    // components/RouteProtection.js
 
     import React from 'react';
     import { useRouter } from 'next/router';
     import { useSession } from '@components/lib/JWTSessionProvider'
 
     const ProtectedRoute = ({ children }) => {
-    const router = useRouter();
+        const router = useRouter();
         const session = useSession();
 
-    React.useEffect(() => {
-        // Check if the user is authenticated, redirect to login if not.
-        if (!session) {
-        router.push('/login'); // Redirect to the login page.
-        }
-    }, [session]);
+        React.useEffect(() => {
+            // Check if the user is authenticated, redirect to login if not.
+            if (!session) {
+                router.push('/login'); // Redirect to the login page.
+            }
+        }, [session]);
 
-    return <>{children}</>;
+        return <>{children}</>;
     };
 
     export default ProtectedRoute;
