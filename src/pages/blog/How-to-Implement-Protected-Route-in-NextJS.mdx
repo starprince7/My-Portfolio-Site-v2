@@ -11,7 +11,7 @@ import CodeBlock from "../../components/CodeHighlighter";
   keyWords="react.js, react, reactjs, next, next.js, nextjs, function, component, child, child component, parent, parent component, steps"
   description="Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them."
   ogDescription="Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them."
-  ogImage="https://images.unsplash.com/photo-1635602739175-bab409a6e94c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2676&q=80"
+  ogImage="https://images.unsplash.com/photo-1635602739175-bab409a6e94c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80"
 />
 
 <DarkTheme>
@@ -22,10 +22,16 @@ import CodeBlock from "../../components/CodeHighlighter";
    <MdxContentBody
     articleTitle="Implementing Protected Routes in Next.js: A Step-by-Step Guide with Code Examples"
     keyWords={["React.js", "Next.js", "Javascript", "Frontend", "Software development"]}
-    articleImageSrc="https://images.unsplash.com/photo-1635602739175-bab409a6e94c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2676&q=80"
+    articleImageSrc="https://images.unsplash.com/photo-1635602739175-bab409a6e94c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80"
   >
-    Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them. Next.js, a popular React framework, makes it simple to construct secured routes by combining components and authentication logic. I'll walk you through the process of implementing protected routes in a Next.js application, with code examples, in this article.
+    Preventing access to specific routes in many web applications is essential to making sure that only users with valid credentials may access them. Next.js, a popular React framework, makes it simple to construct secured routes by combining components and authentication logic. I'll walk you through the process of implementing protected routes in a Next.js application, with code examples, in this article. This guide uses JWT strategy for authentication.
     
+    - What you will learn:
+
+    i.   How to setup JWT authentication in Next.js <br></br>
+    ii.  How to protect private routes. <br></br>
+    iii. Access information about authenticated users. 
+
     ### **How To Implement Protected Routes in Next.js**
     Implementing a protected route is done by wrapping the private page with a Protected route component this component will try looking for a user's session token and if this token cannot be found the user will be denied access and then sees a login screen
 
@@ -74,8 +80,23 @@ import CodeBlock from "../../components/CodeHighlighter";
 
     This step is critical because when we finally implement the page protection logic, we may be required to log in again if we no longer have a session token. To prevent losing this token even if the web browser is reloaded, we need to hold onto it, which entails persisting it.
 
+    #####  How to setup JWT authentication in Next.js
+    Below, a helper function to create session token using the jsonwebtoken package make sure to install this package using `npm` or `yarn`.
+
+    ---
+
+    ```js
+    const createSessionToken = ({id, role, username }) => {
+        return jwt.sign({ id, username, role }, SECRET, { expiresIn: 24 * 60 * 60 })
+    }
+    ```
+    ---
+    ---
+
     ```js
     // pages/api/auth/login.js
+
+    import { serialize } from 'cookie' // `serialize` helps to set cookies into the browser in a Next.js application.
 
     export default async function login(req, res) {
         await db.connectDB()
@@ -93,12 +114,16 @@ import CodeBlock from "../../components/CodeHighlighter";
                 res.status(401).json({ error: formattedError, message: e.message })
                 break
             }
+            
+            const id = account.id
+            const role = account.role
+            const username = account.username
 
-            const token = createSessionToken(account._id, account.role)
+            // Authentication logic below.
+            const token = createSessionToken({ id, username, role }) // these information are stored in the session token.
             const MAX_AGE = 24 * 60 * 60
 
-            // Set the cookie
-                    import { serialize } from 'cookie' // `serialize` method helps to set cookies to the browser in a Next.js application.
+            // Set a cookie
             res.setHeader(
                 'Set-Cookie',
                 serialize('session_token', token, {
@@ -120,11 +145,11 @@ import CodeBlock from "../../components/CodeHighlighter";
     }
     ```
 
-    The file above is a NextJS function handler responsible for authenticating people using my app.
+    The file above is a NextJS function handler responsible for authenticating users using my app.
 
-    I'd like to draw your attention to the part of the code where we first create a session token, set it as a cookie, and add it to the response headers. This ensures that the browser receives and stores the information in its cookie storage, allowing our application to access the token, see below.
+    I'd like to draw your attention to the part of the code where we first create a session token, set it as a cookie, and add it to the response headers. This ensures that the browser receives and stores the information in it's cookie storage, allowing our application to access the session token, see code below.
     ```js
-    const token = createSessionToken(account._id, account.role)
+    const token = createSessionToken({ id, username, role }) // these information are stored in the session token.
     const MAX_AGE = 24 * 60 * 60
 
     // Set the cookie
@@ -197,7 +222,7 @@ import CodeBlock from "../../components/CodeHighlighter";
     // Use Session Hook.
     export const useSession = () => React.useContext(SessionContext)
     ```
-    After creating your session provider, wrap the entire application, in this component.
+    After creating this session provider component, I wrap the entire application with it.
 
     ```js
     //pages/_app.js
@@ -216,11 +241,11 @@ import CodeBlock from "../../components/CodeHighlighter";
     ------
     ------
 
-    #### Recap: Step 2 Task Completed
+    #### Recap: Auth Task Completed
 
-    1). Created or issued a session token.
+    1). Created and issued a session token to a user.
 
-    2). Kept hold of session token.
+    2). Kept hold of session token in the browser's cookie storage.
 
     3). Created a session provider component.
 
