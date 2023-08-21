@@ -105,42 +105,42 @@ import CodeBlock from "../../components/CodeHighlighter";
 
         switch (method) {
             case 'POST':
-            let account
+                let account
 
-            try {
-                account = await Account.login(email, password)
-            } catch (e) {
-                const formattedError = accountErrorFormatter(e)
-                res.status(401).json({ error: formattedError, message: e.message })
-                break
-            }
-            
-            const id = account.id
-            const role = account.role
-            const username = account.username
+                try {
+                    account = await Account.login(email, password)
+                } catch (e) {
+                    const formattedError = accountErrorFormatter(e)
+                    res.status(401).json({ error: formattedError, message: e.message })
+                    break
+                }
+                
+                const id = account.id
+                const role = account.role
+                const username = account.username
 
-            // Authentication logic below.
-            const token = createSessionToken({ id, username, role }) // these information are stored in the session token.
-            const MAX_AGE = 24 * 60 * 60
+                // Authentication logic below.
+                const token = createSessionToken({ id, username, role }) // these information are stored in the session token.
+                const MAX_AGE = 24 * 60 * 60
 
-            // Set a cookie
-            res.setHeader(
-                'Set-Cookie',
-                serialize('session_token', token, {
-                maxAge: MAX_AGE,
-                path: '/',
-                secure: process.env.NODE_ENV === 'production',
-                httpOnly: true,
+                // Set a cookie
+                res.setHeader(
+                    'Set-Cookie',
+                    serialize('session_token', token, {
+                    maxAge: MAX_AGE,
+                    path: '/',
+                    secure: process.env.NODE_ENV === 'production',
+                    httpOnly: true,
+                    })
+                )
+                res.status(200).json({
+                    error: false,
+                    message: `Welcome back, ${account.accountInformation.firstName}!`,
                 })
-            )
-            res.status(200).json({
-                error: false,
-                message: `Welcome back, ${account.accountInformation.firstName}!`,
-            })
-            break
+                break
             default:
             res.status(405).json({ error: true, message: 'Method not allowed' })
-            break
+                break
         }
     }
     ```
@@ -153,19 +153,19 @@ import CodeBlock from "../../components/CodeHighlighter";
     const MAX_AGE = 24 * 60 * 60
 
     // Set the cookie
-        import { serialize } from 'cookie' // `serialize` method helps to set cookies to the browser in a Next.js application.
+    import { serialize } from 'cookie' // `serialize` method helps to set cookies to the browser in a Next.js application.
     res.setHeader(
-    'Set-Cookie',
-    serialize('session_token', token, {
-        maxAge: MAX_AGE,
-        path: '/',
-        secure: process.env.NODE_ENV === 'production',
-        httpOnly: true,
-    })
+        'Set-Cookie',
+        serialize('session_token', token, {
+            maxAge: MAX_AGE,
+            path: '/',
+            secure: process.env.NODE_ENV === 'production',
+            httpOnly: true,
+        })
     )
     res.status(200).json({
-    error: false,
-    message: `Welcome back, ${account.accountInformation.firstName}!`,
+        error: false,
+        message: `Welcome back, ${account.accountInformation.firstName}!`,
     })
     break
     ```
@@ -187,28 +187,18 @@ import CodeBlock from "../../components/CodeHighlighter";
 
         React.useEffect(() => {
             // Check if the session_token cookie exists
-        const sessionToken = Cookies.get('session_token');
+            const sessionToken = Cookies.get('session_token');
             if(!sessionToken) {
                 setDecodedSession({}) // No token, hence set to an empty object!
             }
 
             // Verify token.
             try {
-        const decodedToken = await jwt.verify(sessionToken, 'your_secret_key');
-                setDecodedSession(decodedToken)
-        } catch (error) {
-        console.error('Token verification failed:', error.message);
-        }
-            jwt.verify(
-        sessionToken,
-        'your_secret_key',
-        async (error, decodedToken: any) => {
-            if (error) {
-            setDecodedSession({})
-                    }
+                const decodedToken = await jwt.verify(sessionToken, 'your_secret_key');
                     setDecodedSession(decodedToken)
-        },
-        );
+            } catch (error) {
+                console.error('Token verification failed:', error.message);
+            }
         }, [])
 
         return (
