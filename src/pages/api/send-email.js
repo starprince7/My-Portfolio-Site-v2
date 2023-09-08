@@ -16,8 +16,12 @@ export default async function (req, res) {
       try {
         const result = await mailer(mailOptions);
         console.log("SUCCESS sending e-mail!");
+        res.status(200).send({ message: "Email sent!" });
       } catch (e) {
         console.log("ERROR sending e-mail.", e);
+        res
+          .status(500)
+          .send({ message: "Something went wrong with the server mailer." });
       }
       break;
     default:
