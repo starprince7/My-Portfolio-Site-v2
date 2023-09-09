@@ -1,19 +1,16 @@
 import query from "query-string";
-import microCors from "micro-cors";
 import mailer from "../../services/mail-service";
 
-// Setup cor alloed methods
-const cors = microCors({
-  allowMethods: ["GET", "POST", "PUT", "DELETE"],
-  allowHeaders: ["Authorization", "Content-Type"],
-});
 
-async function ApiMailHandler (req, res) {
+async function ApiMailHandler(req, res) {
   const { method } = req;
   let isSent = false;
 
   if (method === "GET") {
     const { to, data, subject } = query.parse(req.url?.split("?")[1]);
+    if (!to || !data) {
+      return res.status(400).json({ message: "Missing request parameter" });
+    }
     isSent = handleMailing({ to, data, subject });
     if (isSent) res.status(200).send({ message: "Email sent!" });
     else {
@@ -23,6 +20,9 @@ async function ApiMailHandler (req, res) {
     }
   } else if (method === "POST") {
     const { to = "", data, subject } = req.body;
+    if (!to || !data) {
+      return res.status(400).json({ message: "Missing request parameter" });
+    }
     isSent = handleMailing({ to, data, subject });
     if (isSent) res.status(200).send({ message: "Email sent!" });
     else {
@@ -53,4 +53,4 @@ const handleMailing = async ({ to, data, subject }) => {
   }
 };
 
-export default cors(ApiMailHandler)
+export default ApiMailHandler;
