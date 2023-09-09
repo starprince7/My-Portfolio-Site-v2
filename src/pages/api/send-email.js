@@ -1,8 +1,14 @@
+import query from "query-string";
+import microCors from "micro-cors";
 import mailer from "../../services/mail-service";
 
-import query from "query-string";
+// Setup cor alloed methods
+const cors = microCors({
+  allowMethods: ["GET", "POST", "PUT", "DELETE"],
+  allowHeaders: ["Authorization", "Content-Type"],
+});
 
-export default async function (req, res) {
+async function ApiMailHandler (req, res) {
   const { method } = req;
   let isSent = false;
 
@@ -46,3 +52,5 @@ const handleMailing = async ({ to, data, subject }) => {
     console.log("ERROR sending e-mail.", e);
   }
 };
+
+export default cors(ApiMailHandler)
