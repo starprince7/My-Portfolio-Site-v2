@@ -1,8 +1,15 @@
 import query from "query-string";
+import NextCors from "nextjs-cors";
 import mailer from "../../services/mail-service";
 
-
 async function ApiMailHandler(req, res) {
+  // Run the cors middleware
+  await NextCors(req, res, {
+    methods: ["GET", "POST"],
+    origin: "*",
+    optionsSuccessStatus: 200
+  });
+
   const { method } = req;
   let isSent = false;
 
