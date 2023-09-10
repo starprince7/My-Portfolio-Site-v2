@@ -2,7 +2,7 @@ import query from "query-string";
 import mailer from "../../services/mail-service";
 
 async function ApiMailHandler(req, res) {
-  console.log("Method:", req.method, req.path);
+  console.log("Method:", req.method);
 
   const { method } = req;
   let isSent = false;
@@ -46,6 +46,7 @@ const handleMailing = async ({ to, data, subject }) => {
   };
 
   try {
+    console.log("Sending mail...")
     const result = await mailer(mailOptions);
     console.log("SUCCESS sending e-mail!");
     return true;
