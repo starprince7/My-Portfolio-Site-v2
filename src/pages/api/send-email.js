@@ -1,14 +1,8 @@
 import query from "query-string";
-import NextCors from "nextjs-cors";
 import mailer from "../../services/mail-service";
 
 async function ApiMailHandler(req, res) {
-  // Run the cors middleware
-  await NextCors(req, res, {
-    methods: ["GET", "POST"],
-    origin: "*",
-    optionsSuccessStatus: 200
-  });
+  console.log("Method:", req.method, req.path);
 
   const { method } = req;
   let isSent = false;
@@ -43,9 +37,9 @@ async function ApiMailHandler(req, res) {
 }
 
 const handleMailing = async ({ to, data, subject }) => {
-  const customSubject = "Starprince's E-Mailer";
+  const customSubject = "Custom Mailer";
   const mailOptions = {
-    from: "Starprince's Server <no-reply-sys@princenweke.com>",
+    from: "STRP MAIL SERVER <no-reply-sys@princenweke.com>",
     to,
     subject: subject || customSubject,
     text: data.toString(),
