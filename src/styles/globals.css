@@ -136,3 +136,30 @@ pre {
 .function {
   color: #e83e8c !important;
 }
+
+/* ********** Birthday ************ */
+#Birthday p {
+  text-align: center;
+  font-size: large;
+  margin: 0;
+  line-height: 0.2;
+}
+#Birthday .text-wrapper > :nth-child(9) .SplitTextJS-char {
+  color:  rgba(186, 132, 255, 1);
+  font-family: NextSphereBold;
+  background-image: linear-gradient(90deg, #0bbdda 0%, #7d58f2 39%, #fb71ae);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-size: 2rem;
+  line-height: 0.8;
+}
+/* #Birthday .text-wrapper > :nth-child(7) { */
+  /* color: rgba(186, 132, 255, 1) !important; Set the desired opacity value directly */
+  /* background-image: linear-gradient(90deg, #0bbdda 0%, #7d58f2 39%, #fb71ae) !important; */
+  /* -webkit-background-clip: text !important; */
+  /* background-clip: text !important; For non-WebKit browsers */
+  /* -webkit-text-fill-color: transparent !important; */
+  /* text-fill-color: transparent !important; For non-WebKit browsers */
+/* } */
