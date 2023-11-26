@@ -8,6 +8,7 @@ import { useWindowSize } from "../../../hooks";
 const BirthDayIfeanyi = () => {
   const { width, height } = useWindowSize();
   const [beginConfetti, setBeginConfetti] = React.useState(false);
+  const [showBirthdayText, setShowBirthdayText] = React.useState(false);
 
   React.useEffect(() => {
     runBirthdayAnimation();
@@ -16,7 +17,10 @@ const BirthDayIfeanyi = () => {
   function runBirthdayAnimation() {
     const titles = gsap.utils.toArray("p");
     const timeLine = gsap.timeline({
-      onComplete: () => setBeginConfetti(true),
+      onComplete: () => {
+        setBeginConfetti(true)
+        setShowBirthdayText(true)
+      },
     });
 
     titles.forEach((title) => {
@@ -70,6 +74,7 @@ const BirthDayIfeanyi = () => {
           {birthDayNotes.map((note) => (
             <p key={note}>{note}</p>
           ))}
+           <span style={{opacity: showBirthdayText ? 1 : 0}} className="fancy-text">Happy Birthday!</span>
         </div>
       </div>
     </>
@@ -83,7 +88,7 @@ const birthDayNotes = [
   "This day, your birth we cheer!",
   "I celebrate the life you've led.",
   "Big bro!",
-  "Happy Birthday!!!",
+//   "Happy Birthday!",
 ];
 
 export default BirthDayIfeanyi;
