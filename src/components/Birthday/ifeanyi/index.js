@@ -18,8 +18,8 @@ const BirthDayIfeanyi = () => {
     const titles = gsap.utils.toArray("p");
     const timeLine = gsap.timeline({
       onComplete: () => {
-        setBeginConfetti(true)
-        setShowBirthdayText(true)
+        setBeginConfetti(true);
+        setShowBirthdayText(true);
       },
     });
 
@@ -66,7 +66,9 @@ const BirthDayIfeanyi = () => {
         }}
       >
         <div className="text-wrapper">
-          <div style={{textAlign: 'center', color: '#424242', fontSize: '12px'}}>
+          <div
+            style={{ textAlign: "center", color: "#424242", fontSize: "12px" }}
+          >
             ⚠️Attention!
           </div>
           <br />
@@ -74,7 +76,12 @@ const BirthDayIfeanyi = () => {
           {birthDayNotes.map((note) => (
             <p key={note}>{note}</p>
           ))}
-           <span style={{opacity: showBirthdayText ? 1 : 0}} className="fancy-text">Happy Birthday!</span>
+          <span
+            style={{ opacity: showBirthdayText ? 1 : 0, textAlign: "center" }}
+            className="fancy-text"
+          >
+            Happy Birthday!
+          </span>
         </div>
       </div>
     </>
@@ -88,7 +95,7 @@ const birthDayNotes = [
   "This day, your birth we cheer!",
   "I celebrate the life you've led.",
   "Big bro!",
-//   "Happy Birthday!",
+  //   "Happy Birthday!",
 ];
 
 export default BirthDayIfeanyi;
