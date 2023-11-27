@@ -1,16 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Split from "../../Split";
 import Link from "next/link";
+import ReactConfetti from "react-confetti";
+
+import Split from "../../Split";
 import appData from "../../../data/app.json";
 import handleFullScreenNavbar from "../../../common/handleFullScreenNavbar";
+import { useWindowSize } from "../../../hooks";
 
 const NavbarFullMenu = ({ theme, lr }) => {
+  const { width, height } = useWindowSize();
+  const [beginConfetti, setBeginConfetti] = React.useState(false);
   React.useEffect(() => {
     handleFullScreenNavbar();
+    setBeginConfetti(true);
   }, []);
   return (
     <>
+      {beginConfetti && <ReactConfetti width={width} height={height} />}
       <div
         id="navi"
         className={`topnav ${theme ? (theme === "light" ? "light" : "") : ""}`}
@@ -20,7 +27,9 @@ const NavbarFullMenu = ({ theme, lr }) => {
             <Link href="/">
               {theme ? (
                 theme === "light" ? (
-                  {/* <img src={`${appData.darkLogo}`} alt="logo" /> */ }
+                  {
+                    /* <img src={`${appData.darkLogo}`} alt="logo" /> */
+                  }
                 ) : (
                   <img src={`${appData.lightLogo}`} alt="logo" />
                 )
@@ -81,9 +90,9 @@ const NavbarFullMenu = ({ theme, lr }) => {
 
                   <li>
                     <div className="o-hidden">
-                        <a href="/portfolio" className="link">
-                          <span className="nm">04.</span>Portfolio
-                        </a>
+                      <a href="/portfolio" className="link">
+                        <span className="nm">04.</span>Portfolio
+                      </a>
                     </div>
                   </li>
 
@@ -105,7 +114,6 @@ const NavbarFullMenu = ({ theme, lr }) => {
                       </Link>
                     </div>
                   </li>
-                  
                 </ul>
               </div>
             </div>
@@ -114,18 +122,20 @@ const NavbarFullMenu = ({ theme, lr }) => {
                 <div className="item">
                   <h6>Phone :</h6>
                   {/* <a href="tel:+2349024847299"> <p>+234 902 484 7299</p></a> <br /> */}
-                  <a href="tel:+2347037130120"><p>+234 703 713 0120</p></a>
+                  <a href="tel:+2347037130120">
+                    <p>+234 703 713 0120</p>
+                  </a>
                 </div>
                 <div className="item">
                   <h6>Location :</h6>
-                  <p>
-                    Lagos, Nigeria
-                  </p>
+                  <p>Lagos, Nigeria</p>
                 </div>
                 <div className="item">
                   <h6>Email :</h6>
                   <p>
-                    <a href="mailto:Princeagezinweke@gmail.com">Princeagezinweke@gmail.com</a>
+                    <a href="mailto:Princeagezinweke@gmail.com">
+                      Princeagezinweke@gmail.com
+                    </a>
                   </p>
                 </div>
               </div>
