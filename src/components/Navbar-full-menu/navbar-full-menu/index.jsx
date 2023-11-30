@@ -6,18 +6,19 @@ import ReactConfetti from "react-confetti";
 import Split from "../../Split";
 import appData from "../../../data/app.json";
 import handleFullScreenNavbar from "../../../common/handleFullScreenNavbar";
-import { useWindowSize } from "../../../hooks";
+import { useBirthDay, useWindowSize } from "../../../hooks";
 
 const NavbarFullMenu = ({ theme, lr }) => {
   const { width, height } = useWindowSize();
-  const [beginConfetti, setBeginConfetti] = React.useState(false);
+  const { isBirthday } = useBirthDay("november", 27);
+
   React.useEffect(() => {
     handleFullScreenNavbar();
-    setBeginConfetti(true);
   }, []);
+
   return (
     <>
-      {beginConfetti && <ReactConfetti width={width} height={height} />}
+      {isBirthday && <ReactConfetti width={width} height={height} />}
       <div
         id="navi"
         className={`topnav ${theme ? (theme === "light" ? "light" : "") : ""}`}
