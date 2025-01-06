@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": { "first": "Hi, I am", "second": "prince," },
+    "title": { "first": "Star", "second": "prince." },
     "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_1080/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg",
     "sub": "Design",
     "link": "/#"

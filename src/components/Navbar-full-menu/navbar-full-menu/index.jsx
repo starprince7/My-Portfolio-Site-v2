@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import ReactConfetti from "react-confetti";
+import Confetti from 'confetti-react';
 
 import Split from "../../Split";
 import appData from "../../../data/app.json";
@@ -18,7 +18,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
 
   return (
     <>
-      {isBirthday && <ReactConfetti width={width} height={height} />}
+      {isBirthday && <Confetti width={width} height={height} />}
       <div
         id="navi"
         className={`topnav ${theme ? (theme === "light" ? "light" : "") : ""}`}
@@ -35,7 +35,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                   <img src={`${appData.lightLogo}`} alt="logo" />
                 )
               ) : (
-                <h6 className="portfolio-logo">PRINCE NWEKE</h6>
+                <h6 className="portfolio-logo">hello I am</h6>
               )}
             </Link>
           </div>
