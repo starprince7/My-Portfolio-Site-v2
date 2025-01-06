@@ -1,7 +1,7 @@
 import React from "react";
 import gsap from "gsap";
 import SplitTextJs from "split-text-js";
-import ReactConfetti from "react-confetti";
+import ReactConfetti from "confetti-react";
 
 import { useWindowSize } from "../../../hooks";
 
