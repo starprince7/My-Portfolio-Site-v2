@@ -23,7 +23,7 @@ const AboutDescription = () => {
     <section className="block-sec">
       <div
         className="background bg-img section-padding pb-0"
-        style={{ backgroundImage: `url(/img/slid/1.jpg)` }}
+        style={{ backgroundImage: `url("/img/portfolio/full2/star-moon.jpg")` }}
         data-overlay-dark="8"
       >
         <div className="container">
@@ -32,12 +32,12 @@ const AboutDescription = () => {
               <div className="vid-area">
                 <div className="cont">
                   <h1 className="wow" data-splitting>
-                    HELLO, <br /> README
+                    README
                   </h1>
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 offset-lg-1">
+            <div className="col-lg-8 offset-lg-1">
               <div className="testim-box">
                 <div className="head-box">
                   <h6 className="wow fadeIn" data-wow-delay=".5s">
@@ -54,15 +54,30 @@ const AboutDescription = () => {
                 >
                   <div className="item">
                     <p>
-                      Prince Nweke: Proficient Software Developer experienced in
-                      Web Technologies and Best Practices from Lagos, Nigeria.
-                      Prince is a highly skilled software developer based in
-                      Lagos, Nigeria. Specializing in web technologies and
-                      software development best practices. With a focus on
-                      providing effective solutions to individuals and small
-                      businesses in a timely manner, I am confident in my
-                      ability to thrive as a solution-driven software engineer
-                      capable of overcoming dynamic difficulties.
+                      In a world where technology dictates the pace of progress,
+                      Starprince emerged as a digital architect, transforming
+                      industries with nothing but lines of code and an
+                      unshakable vision. His journey began in a dimly lit room,
+                      a single laptop humming with infinite possibilities. Eager
+                      to bridge gaps between innovation and business, he
+                      ventured into eCommerce, engineering AI-driven platforms
+                      that personalized shopping experiences and skyrocketed
+                      conversion rates. The retail giants took notice—his
+                      solutions weren’t just tools; they were growth engines.
+                      Then came the streaming revolution. Understanding the
+                      hunger for on-demand content, he crafted intelligent
+                      recommendation engines, reducing churn rates and keeping
+                      viewers engaged longer than ever. His innovations reshaped
+                      digital entertainment, placing him at the heart of a
+                      billion-dollar industry. At the intersection of all his
+                      ventures stood AI—his true game-changer. From predictive
+                      analytics for enterprises to self-learning chatbots, his
+                      solutions optimized operations, cut costs, and unlocked
+                      new revenue streams across multiple sectors. Today,
+                      Starprince isn’t just a developer—he’s a visionary
+                      entrepreneur, a force behind businesses that thrive on
+                      innovation. His work isn’t just about writing code; it’s
+                      about rewriting the future of business.
                     </p>
                   </div>
                 </Slider>

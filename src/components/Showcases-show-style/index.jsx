@@ -2,18 +2,13 @@ import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ShowcassesFullScreenData from "../../data/showcases-full-screen-slider.json";
-import SwiperCore, {
-  Navigation,
-  
-  Parallax,
-  Mousewheel,
-} from "swiper";
+import SwiperCore, { Navigation, Parallax, Mousewheel } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/mousewheel";
 
-SwiperCore.use([Navigation,  Parallax, Mousewheel]);
+SwiperCore.use([Navigation, Parallax, Mousewheel]);
 
 const ShowcasesShowStyle = () => {
   const [load, setLoad] = React.useState(true);
@@ -34,7 +29,10 @@ const ShowcasesShowStyle = () => {
   const navigationNextRef = React.useRef(null);
   return (
     <header className="slider showstyle">
-      <div className="swiper-container container" style={{position: 'relative'}}>
+      <div
+        className="swiper-container container"
+        style={{ position: "relative" }}
+      >
         {!load ? (
           <Swiper
             speed={1000}
@@ -44,7 +42,6 @@ const ShowcasesShowStyle = () => {
               prevEl: navigationPrevRef.current,
               nextEl: navigationNextRef.current,
             }}
-   
             onBeforeInit={(swiper) => {
               swiper.params.navigation.prevEl = navigationPrevRef.current;
               swiper.params.navigation.nextEl = navigationNextRef.current;
@@ -64,7 +61,6 @@ const ShowcasesShowStyle = () => {
                 swiper.navigation.destroy();
                 swiper.navigation.init();
                 swiper.navigation.update();
-
               });
             }}
             className="swiper-wrapper"
@@ -80,9 +76,9 @@ const ShowcasesShowStyle = () => {
                   <div className="container">
                     <div className="row">
                       <div className="col-lg-10 offset-lg-1">
-                        <div className="caption">
+                        <div className="caption" style={{ display: "flex", gap: 8 }}>
                           <h1>
-                            <Link href="/project-details2/project-details2-dark">
+                            <Link href={slide.link}>
                               <a>
                                 <div
                                   className="stroke"
@@ -96,6 +92,7 @@ const ShowcasesShowStyle = () => {
                               </a>
                             </Link>
                           </h1>
+                          <p>{slide.paragraph}</p>
                         </div>
                       </div>
                     </div>

@@ -49,7 +49,7 @@ const Footer = () => {
                   <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/prince-nweke-295a5b191/" className="icon">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a target="_blank" rel="noreferrer" href="https://twitter.com/dev_starprince" className="icon">
+                  <a target="_blank" rel="noreferrer" href="https://twitter.com/hey_starprince" className="icon">
                     <i className="fab fa-twitter"></i>
                   </a>
                   <a target="_blank" rel="noreferrer" href="https://www.instagram.com/devstarprince/" className="icon">

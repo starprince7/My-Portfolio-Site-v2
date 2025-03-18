@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+const SEO_IMAGE = 'https://res.cloudinary.com/starprince-dev/image/upload/w_500/v1742314227/princenweke.com/prince_profile_dx5xdx.jpg'
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -25,10 +27,10 @@ class MyDocument extends Document {
             offering practical solutions to people and small
             enterprises."
           />
-          <meta name="author" content="Prince Nweke A." />
-          <meta name="og:title" content="Prince Nweke Software developer" />
+          <meta name="author" content="Starprince.dev" />
+          <meta name="og:title" content="Starprince Software developer" />
           <meta name="og:type" content="website" />
-          <meta name="og:site_name" content="princenweke" />
+          <meta name="og:site_name" content="starprince" />
           <meta
             name="og:description"
             content="Prince Nweke is an accomplished software engineer
@@ -39,20 +41,20 @@ class MyDocument extends Document {
           />
           <meta
             name="og:image"
-            content="https://res.cloudinary.com/starprince-dev/image/upload/w_700/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg"
+            content={SEO_IMAGE}
           />
           <meta name="twitter:card" content="summary_large_image" /> {/* Specifies the type of card for Twitter */}
-          <meta name="twitter:site" content="@dev_starprince" /> {/* Replace with your Twitter handle */}
-          <meta name="twitter:title" content="Prince Nweke Software developer" />
+          <meta name="twitter:site" content="@hey_starprince" /> {/* Replace with your Twitter handle */}
+          <meta name="twitter:title" content="Starprince Software developer" />
           <meta
             name="twitter:description"
-            content="Prince Nweke is an accomplished software engineer based in Lagos, Nigeria. He specialises in web development and standard practices with an emphasis on offering practical solutions to people and small enterprises."
+            content="Prince Nweke is an accomplished software engineer based in Lagos, Nigeria. He specialises in custom mobile and web development and standard practices with an emphasis on offering practical solutions to people and small enterprises."
           />
           <meta
             name="twitter:image"
-            content="https://res.cloudinary.com/starprince-dev/image/upload/w_700/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg"
+            content={SEO_IMAGE}
           />
-          <link rel="canonical" href="https://www.princenweke.com/" />
+          <link rel="canonical" href="https://www.starprince.dev/" />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           {/* Google Fonts */}
           <link

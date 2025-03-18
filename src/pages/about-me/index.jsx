@@ -12,6 +12,10 @@ const AboutDark = () => {
         <DarkTheme>
             <NavbarFullMenu />
             <AboutDescription />
+            <br />
+            <br />
+            <br />
+            <br />
             <SkillsCircle subBG theme="dark" />
             <Footer />
         </DarkTheme>

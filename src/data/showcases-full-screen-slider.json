@@ -1,30 +1,46 @@
 [
   {
     "id": 1,
-    "title": { "first": "Starprince", "second": "→" },
-    "image": "https://res.cloudinary.com/starprince-dev/image/upload/w_1080/v1688904351/princenweke.com/prince_white_bg_siqub6.jpg",
-    "sub": "Design",
-    "link": "/#"
+    "title": {
+      "first": "Once",
+      "second": "upon"
+    },
+    "image": "/img/portfolio/full2/stars2.gif",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": "a time in a world of ones and zeroes, ideas whispered, waiting to grow. With code as my canvas, I shape visions into reality—each line a step toward innovation. Whether an AI-driven tool, a seamless platform, or a bold new idea, I bring it to life with precision and creativity. Let’s build something extraordinary—your vision, my code. Ready to start?"
   },
   {
     "id": 2,
-    "title": { "first": "I'm passionate About", "second": "Software." },
-    "image": "/img/portfolio/full2/1.jpg",
+    "title": {
+      "first": "About",
+      "second": "Me"
+    },
+    "image": "/img/portfolio/full2/star-moon.jpg",
     "sub": "Design",
-    "link": "/about-me"
+    "link": "/about-me",
+    "paragraph": "Hi, I'm Starprince, I build world class software products. Learn more."
   },
   {
     "id": 3,
-    "title": { "first": "Here are my", "second": ">> works." },
-    "image": "/img/portfolio/full2/7.jpg",
+    "title": {
+      "first": "My",
+      "second": "Works"
+    },
+    "image": "/img/portfolio/full2/star-about.jpg",
     "sub": "Design",
-    "link": "/portfolio"
+    "link": "/portfolio",
+    "paragraph": "View my recent projects"
   },
   {
     "id": 4,
-    "title": { "first": "Let's get in touch", "second": ">> connect" },
+    "title": {
+      "first": "Reach Me Here",
+      "second": ""
+    },
     "image": "/img/portfolio/full2/prince_profile.JPG",
     "sub": "Design",
-    "link": "/contact"
+    "link": "/contact",
+    "paragraph": "Let's discuss how I can help your business grow."
   }
 ]

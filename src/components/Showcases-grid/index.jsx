@@ -24,7 +24,7 @@ const ShowcasesGrid = () => {
     setTimeout(() => {
       setLoad(false);
       tooltipEffect();
-      removeSlashFromPagination()
+      removeSlashFromPagination();
     });
   }, []);
 
@@ -85,17 +85,33 @@ const ShowcasesGrid = () => {
           >
             {ShowcassesFullScreenData.map((slide) => (
               <SwiperSlide key={slide.id} className="swiper-slide">
-                <Link passHref href="/project-details2/project-details2-dark">
+                <Link passHref href={slide.link}>
                   <div
                     className="bg-img"
                     style={{
                       backgroundImage: `url(${slide.image})`,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                     data-tooltip-tit={
                       slide.title.first + " " + slide.title.second
                     }
                     data-tooltip-sub={slide.sub}
-                  ></div>
+                  >
+                    <div>
+                      <h3>{slide.title.first + " " + slide.title.second}</h3>
+                      <br />
+                      <p
+                        style={{
+                          padding: "15px !important",
+                          width: 330,
+                        }}
+                      >
+                        {slide.paragraph}
+                      </p>
+                    </div>
+                  </div>
                 </Link>
               </SwiperSlide>
             ))}

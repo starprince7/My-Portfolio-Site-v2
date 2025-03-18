@@ -35,7 +35,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                   <img src={`${appData.lightLogo}`} alt="logo" />
                 )
               ) : (
-                <h6 className="portfolio-logo">hello I am</h6>
+                <h6 className="portfolio-logo">Starprince</h6>
               )}
             </Link>
           </div>
