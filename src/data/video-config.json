@@ -1,0 +1,34 @@
+{
+  "videos": [
+    {
+      "original": "/video/app-1.mp4",
+      "optimized": "/video/optimized/app-1.mp4",
+      "poster": "/video/posters/app-1.jpg",
+      "size": "large"
+    },
+    {
+      "original": "/video/app-2.mp4",
+      "optimized": "/video/optimized/app-2.mp4",
+      "poster": "/video/posters/app-2.jpg",
+      "size": "large"
+    },
+    {
+      "original": "/video/app-3.mp4",
+      "optimized": "/video/optimized/app-3.mp4",
+      "poster": "/video/posters/app-3.jpg",
+      "size": "large"
+    },
+    {
+      "original": "/video/app-3b.mp4",
+      "optimized": "/video/optimized/app-3b.mp4",
+      "poster": "/video/posters/app-3b.jpg",
+      "size": "large"
+    },
+    {
+      "original": "/video/app-3c.mp4",
+      "optimized": "/video/optimized/app-3c.mp4",
+      "poster": "/video/posters/app-3c.jpg",
+      "size": "large"
+    }
+  ]
+}

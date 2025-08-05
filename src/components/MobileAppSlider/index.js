@@ -82,7 +82,7 @@ const MobileAppSlider = () => {
             {MobileAppShowcaseData.map((slide) => (
               <SwiperSlide key={slide.id} className="swiper-slide app-swiper-slide">
                 <div
-                  className="bg-img valign"
+                  className="bg-img valign app-slider-bg"
                   style={{
                     backgroundImage: `url(${slide.image})`,
                   }}

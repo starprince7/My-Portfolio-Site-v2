@@ -1,18 +1,22 @@
 {
-  "name": "PrinceNweke.com",
+  "name": "starprince",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize:videos": "node scripts/optimize-videos.js",
+    "analyze": "ANALYZE=true npm run build",
+    "perf:audit": "lighthouse http://localhost:3000 --output=json --output-path=./lighthouse-report.json"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.10",
     "@vercel/analytics": "^1.0.1",
+    "animate.css": "^4.1.1",
     "confetti-react": "^2.6.0",
     "form-data": "^4.0.0",
     "formik": "^2.2.9",

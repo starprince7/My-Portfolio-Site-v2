@@ -5,7 +5,9 @@
     "secTex": "E Store",
     "image": "/img/portfolio/metro/01.jpg",
     "slug": "/project-details2/project-details2-dark",
-    "video": "/video/app-1.mp4"
+    "video": "https://res.cloudinary.com/starprince-dev/video/upload/q_auto:good,f_auto,w_450,h_800,c_fill,br_1000k/princenweke.com/Video/app-1_yoooed",
+    "videoKey": "app-1",
+    "poster": "https://res.cloudinary.com/starprince-dev/image/upload/so_1.0,q_auto:good,f_jpg,w_450,h_800,c_fill/princenweke.com/Video/app-1_yoooed"
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "secTex": "Financial App",
     "image": "/img/portfolio/metro/02.jpg",
     "slug": "/project-details2/project-details2-dark",
-    "video": "/video/app-2.mp4"
+    "video": "https://res.cloudinary.com/starprince-dev/video/upload/q_auto:good,f_auto,w_450,h_800,c_fill,br_1000k/princenweke.com/Video/app-2_rbqzhr",
+    "videoKey": "app-2",
+    "poster": "https://res.cloudinary.com/starprince-dev/image/upload/so_1.0,q_auto:good,f_jpg,w_450,h_800,c_fill/princenweke.com/Video/app-2_rbqzhr"
   },
   {
     "id": 3,
@@ -21,6 +25,8 @@
     "secTex": "E Store",
     "image": "/img/portfolio/metro/03.jpg",
     "slug": "/project-details2/project-details2-dark",
-    "video": "/video/app-3b.mp4"
+    "video": "https://res.cloudinary.com/starprince-dev/video/upload/q_auto:good,f_auto,w_450,h_800,c_fill,br_1000k/princenweke.com/Video/app-3b_glyaeu",
+    "videoKey": "app-3b",
+    "poster": "https://res.cloudinary.com/starprince-dev/image/upload/so_1.0,q_auto:good,f_jpg,w_450,h_800,c_fill/princenweke.com/Video/app-3b_glyaeu"
   }
 ]

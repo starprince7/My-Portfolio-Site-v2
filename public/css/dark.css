@@ -2055,6 +2055,13 @@ body {
   /* It already attached to a flex element */
   justify-content: center !important;
   display: flex;
+  /* width: 320px !important; */
+  margin: 0 auto !important;
+}
+.app-slider-bg {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-size: contain !important;
 }
 .slider {
   position: relative;
@@ -2551,7 +2558,7 @@ body {
 }
 
 .freelancer .container {
-  margin-bottom: 200px !important;
+  margin-bottom: 150px !important;
 }
 .freelancer .cont {
   margin-top: 50px;

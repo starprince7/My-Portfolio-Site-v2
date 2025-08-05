@@ -7,6 +7,7 @@ import Cursor from "../components/Cursor";
 import ScrollToTop from "../components/Scroll-to-top";
 import LoadingScreen from "../components/Loading-Screen";
 import "../styles/globals.css";
+import 'animate.css/animate.min.css';
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -28,12 +29,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Prince Nweke</title>
+        <title>Starprince</title>
         <link rel="icon" href="/img/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
       </Head>
       <Cursor />
       {/* <LoadingScreen /> */}
