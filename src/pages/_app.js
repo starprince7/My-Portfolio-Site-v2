@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Cursor />
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <ScrollToTop />
       <Component {...pageProps} />
       <Analytics />
