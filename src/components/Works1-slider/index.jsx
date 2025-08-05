@@ -78,12 +78,11 @@ const Works1Slider = () => {
                           loop
                           playsInline
                           style={{ height: 280, borderRadius: 45 }}
+                          // poster=""
                         >
                           <source
                             src={slide.video}
                             type="video/mp4"
-                            poster="/img/portfolio/works/thumbnail-undercover-lover.png" // Add your thumbnail image path here
-                            preload="none"
                           />
                           Your browser does not support the video tag.
                         </video>
