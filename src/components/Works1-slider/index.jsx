@@ -20,7 +20,7 @@ const Works1Slider = () => {
             <div className="swiper-container">
               <Swiper
                 className="swiper-wrapper"
-                slidesPerView={2}
+                slidesPerView={3}
                 centeredSlides={true}
                 loop={true}
                 navigation={{
@@ -48,35 +48,53 @@ const Works1Slider = () => {
                 speed={1000}
                 breakpoints={{
                   320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 0,
                   },
                   640: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 0,
                   },
                   767: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 0,
                     centeredSlides: false,
                   },
                   991: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                   },
                 }}
               >
                 {works1SliderData.map((slide) => (
                   <SwiperSlide key={slide.id} className="swiper-slide">
                     <div
-                      className="content wow noraidus fadeInUp"
+                      className="content wow noraidus fadeInUp "
                       data-wow-delay=".3s"
                     >
-                      <div
-                        className="item-img bg-img wow imago"
-                        style={{
-                          backgroundImage: `url(${slide.image})`,
-                        }}
-                      ></div>
+                      {slide.video ? (
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          style={{ height: 280, borderRadius: 45 }}
+                        >
+                          <source
+                            src={slide.video}
+                            type="video/mp4"
+                            poster="/img/portfolio/works/thumbnail-undercover-lover.png" // Add your thumbnail image path here
+                            preload="none"
+                          />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        <div
+                          className="item-img bg-img wow imago"
+                          style={{
+                            backgroundImage: `url(${slide.image})`,
+                          }}
+                        ></div>
+                      )}
                       <div className="cont">
                         <h6 className="color-font">
                           <Link href="/works/works-dark">{slide.title}</Link>

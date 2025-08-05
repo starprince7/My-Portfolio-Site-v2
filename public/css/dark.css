@@ -271,8 +271,8 @@ span:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
 }
 
 .primery-shadow {
@@ -1346,6 +1346,20 @@ body {
   opacity: 1;
 }
 
+.display-mobile-app img {
+  width: 100%;
+  height: auto;
+  width: 400px;
+  margin: 0 auto;
+}
+/* let's add style for mobile screens */
+@media (max-width: 500px) {
+   .img-app-mockup {
+    width: 300px !important;
+    height: auto;
+  }
+}
+
 /* ====================== [ End Overlay ] ====================== */
 /* ====================== [ Start Heading ] ====================== */
 .sec-head {
@@ -1458,11 +1472,12 @@ body {
 /* ====================== [  Start Button Style ] ====================== */
 .btn-curve {
   background: transparent;
-  padding: 12px 35px;
+  padding: 15px 40px !important;
   border: 1px solid #1e1e1e;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 30px;
 }
 .btn-curve:focus {
   outline: none;
@@ -2036,6 +2051,11 @@ body {
 
 /* ====================== [ End navbar ] ====================== */
 /* ====================== [ Start Slider ] ====================== */
+.app-swiper-slide {
+  /* It already attached to a flex element */
+  justify-content: center !important;
+  display: flex;
+}
 .slider {
   position: relative;
 }
@@ -2930,8 +2950,9 @@ body {
   height: 100%;
 }
 .showcase-carus .swiper-slide .bg-img {
-  height: 60vh;
-  margin: 20vh 0 0;
+  height: auto;
+  width: 35%;
+  margin: 10vh 0 0;
 }
 .showcase-carus .caption h1,
 .showcase-carus .copy-cap h1 {
@@ -3107,6 +3128,10 @@ body {
 }
 .showstyle .swiper-container {
   height: 100%;
+}
+.app-swiper-container {
+  margin: 0 auto;
+  max-width: 1300px !important;
 }
 .showstyle .swiper-slide .bg-img {
   height: 70vh;
@@ -4088,12 +4113,16 @@ body {
   opacity: 1;
 }
 
+.border-red {
+  border: 1px solid red;
+}
+
 .work-carousel .content {
   position: relative;
 }
 .work-carousel .content .item-img {
   position: relative;
-  height: 480px;
+  height: 280px !important;
   line-height: 0;
   border-radius: 10px 10px 0 0;
 }
@@ -6008,7 +6037,8 @@ body {
   }
   .showcase-carus .swiper-slide .bg-img {
     margin: 0;
-    height: 100vh;
+    height: 70vh;
+    width: 300px;
     background-position: center center;
   }
   .showcase-carus.circle-slide .caption h1,
