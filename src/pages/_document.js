@@ -53,10 +53,6 @@ class MyDocument extends Document {
           <meta name="twitter:image" content={SEO_IMAGE} />
           <link rel="canonical" href="https://www.starprince.dev/" />
           <link rel="shortcut icon" href="/img/favicon.ico" />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-          />
           {/* Google Fonts */}
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
