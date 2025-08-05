@@ -24,7 +24,7 @@ const MobileAppSlider = () => {
   const navigationNextRef = React.useRef(null);
   return (
     <header className="slider showcase-carus" style={{paddingTop: '50px'}}>
-      <div id="content-carousel-container-unq-1" className="app-swiper-container swiper-container">
+      <div id="content-carousel-container-unq-1" className="app-swiper-container swiper-container animate__animated animate__flipInX animate__delay-5s">
         {!load ? (
           <Swiper
             speed={1000}

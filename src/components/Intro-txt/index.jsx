@@ -7,13 +7,13 @@ const IntroTxt = ({ subBG }) => {
       style={{ backgroundImage: "url(/svg/hero-back-dark.svg)" }}
       data-overlay-dark="4"
     >
-      <div className="container" style={{ margin: "80px 20px !important" }}>
+      <div className="container">
         <div className="row">
           <div className="col-lg-6">
             <div className="caption center mt-50">
               <h6>{"</>"} Hi</h6>
-              <h1>I'm Software Developer with a Special focus on
-                Turning Your Ideas To Code</h1>
+              <h1>I'm software <span className="highlight">developer</span> with a special focus on
+                transforming ideas into code</h1>
               <p>
                 I'm a full stack software . If you're looking for a
                 developer who can bring your ideas to life and has a passion for

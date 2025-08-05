@@ -11,7 +11,7 @@ import CallToAction from "../../components/Call-to-action";
 import ShowcasesOneCenter from "../../components/Showcases-one-center";
 import MobileAppSlider from "../../components/MobileAppSlider";
 
-const Showcase4Dark = () => {
+const NewHomePage = () => {
   return (
     <DarkTheme>
       <NavbarFullMenu />
@@ -30,4 +30,4 @@ const Showcase4Dark = () => {
   );
 };
 
-export default Showcase4Dark;
+export default NewHomePage;

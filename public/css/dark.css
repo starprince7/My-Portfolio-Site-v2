@@ -142,7 +142,7 @@ span:hover {
 }
 
 .custom-font {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 /* ====================== [ End Typography  ] ====================== */
@@ -1354,7 +1354,7 @@ body {
 }
 /* let's add style for mobile screens */
 @media (max-width: 500px) {
-   .img-app-mockup {
+  .img-app-mockup {
     width: 300px !important;
     height: auto;
   }
@@ -2541,6 +2541,17 @@ body {
 .freelancer {
   min-height: 100vh;
   background-position: right top;
+}
+/* style the freelancer container only for tablet and Desktop screens */
+@media (min-width: 500px) {
+  .freelancer .container {
+    /* border: solid yellow; */
+    margin-left: 70px !important;
+  }
+}
+
+.freelancer .container {
+  margin-bottom: 200px !important;
 }
 .freelancer .cont {
   margin-top: 50px;

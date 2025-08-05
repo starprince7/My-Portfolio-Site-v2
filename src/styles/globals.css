@@ -1,19 +1,36 @@
 @font-face {
   font-family: NextSphereBold;
-  src: url('/fonts/next-sphere-font/NextSphereBold.ttf')
+  src: url("/fonts/next-sphere-font/NextSphereBold.ttf");
 }
 @font-face {
   font-family: NextSphereThin;
-  src: url('/fonts/next-sphere-font/NextSphereThin.ttf')
+  src: url("/fonts/next-sphere-font/NextSphereThin.ttf");
 }
 
+.highlight {
+  background: linear-gradient(120deg, #75dab4 0%, #75dab4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.25em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  text-decoration: none;
+  /* Added hight styles below */
+  background-size: 100% 88%;
+  color: #11141b;
+}
+
+/* .highlight:hover {
+  background-size: 100% 88%;
+  color: #11141b;
+} */
+
 .portfolio-logo {
-  font-family: NextSphereBold;
+  font-family: NextSphereBold !important;
   font-size: 13px;
   line-height: 10.5px;
 }
 .portfolio-logo-footer {
-  font-family: NextSphereBold;
+  font-family: NextSphereBold !important;
   font-size: smaller;
 }
 
@@ -125,7 +142,7 @@ section.team.section-padding {
 }
 
 pre code {
-  color: #a1ccff !important
+  color: #a1ccff !important;
 }
 
 pre {
@@ -157,7 +174,7 @@ pre {
 } */
 .fancy-text {
   display: inline-block;
-  color:  rgba(186, 132, 255, 1);
+  color: rgba(186, 132, 255, 1);
   font-family: NextSphereBold;
   background-image: linear-gradient(90deg, #0bbdda 0%, #7d58f2 39%, #fb71ae);
   -webkit-background-clip: text;
@@ -166,13 +183,13 @@ pre {
   text-fill-color: transparent;
   font-size: 2rem;
   line-height: 0.8;
-  transition: all ease-in .4s;
+  transition: all ease-in 0.4s;
 }
 /* #Birthday .text-wrapper > :nth-child(7) { */
-  /* color: rgba(186, 132, 255, 1) !important; Set the desired opacity value directly */
-  /* background-image: linear-gradient(90deg, #0bbdda 0%, #7d58f2 39%, #fb71ae) !important; */
-  /* -webkit-background-clip: text !important; */
-  /* background-clip: text !important; For non-WebKit browsers */
-  /* -webkit-text-fill-color: transparent !important; */
-  /* text-fill-color: transparent !important; For non-WebKit browsers */
+/* color: rgba(186, 132, 255, 1) !important; Set the desired opacity value directly */
+/* background-image: linear-gradient(90deg, #0bbdda 0%, #7d58f2 39%, #fb71ae) !important; */
+/* -webkit-background-clip: text !important; */
+/* background-clip: text !important; For non-WebKit browsers */
+/* -webkit-text-fill-color: transparent !important; */
+/* text-fill-color: transparent !important; For non-WebKit browsers */
 /* } */

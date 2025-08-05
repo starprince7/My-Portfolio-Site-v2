@@ -13,7 +13,7 @@ const Works1Slider = () => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
   return (
-    <section className="work-carousel section-padding pt-0 metro position-re">
+    <section className="work-carousel section-padding pt-0 metro position-re" style={{ paddingTop: '50px' }}>
       <div className="container ontop">
         <div className="row">
           <div className="col-lg-12 no-padding">

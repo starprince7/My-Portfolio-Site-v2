@@ -6,7 +6,10 @@ import VisibilitySensor from "react-visibility-sensor";
 
 const Numbers1 = () => {
   return (
-    <section className="number-sec section-padding sub-bg">
+    <section
+      className="number-sec section-padding sub-bg"
+      style={{ paddingBottom: "50px", marginBottom: "50px" }}
+    >
       <div className="container">
         <div className="row">
           {numbers1Data.map((item) => (
@@ -20,7 +23,7 @@ const Numbers1 = () => {
                       <VisibilitySensor onChange={start} delayedCall>
                         <>
                           <span className="count" ref={countUpRef} />{" "}
-                          {item.id == 3 ? "K" : ""}
+                          {item.id == 3 ? "" : ""}
                         </>
                       </VisibilitySensor>
                     )}

@@ -2,25 +2,25 @@
   {
     "id": 1,
     "icon": "pe-7s-smile",
-    "txt": "Happy Clients",
-    "value": "2400"
+    "txt": "Web Projects",
+    "value": "15"
   },
   {
     "id": 2,
     "icon": "pe-7s-portfolio",
-    "txt": "Compleate Projects",
-    "value": "133"
+    "txt": "Mobile Projects",
+    "value": "6"
   },
   {
     "id": 3,
     "icon": "pe-7s-cloud-download",
-    "txt": "Files Downloaded",
-    "value": "254"
+    "txt": "Technology Stack",
+    "value": "5"
   },
   {
     "id": 4,
     "icon": "pe-7s-medal",
-    "txt": "Award Win",
-    "value": "46"
+    "txt": "Portfolio Version",
+    "value": "3"
   }
 ]

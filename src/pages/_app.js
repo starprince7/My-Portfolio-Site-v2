@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Script from "next/script";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 import Cursor from "../components/Cursor";
 import ScrollToTop from "../components/Scroll-to-top";
@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
     // Find all elements with the "text" class
     const elements = document.getElementsByTagName("code");
-    console.log("The elements: ", elements)
+    console.log("The elements: ", elements);
 
     // Loop through the elements
     for (let i = 0; i < elements.length; i++) {
@@ -30,6 +30,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Prince Nweke</title>
         <link rel="icon" href="/img/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
       </Head>
       <Cursor />
       {/* <LoadingScreen /> */}
