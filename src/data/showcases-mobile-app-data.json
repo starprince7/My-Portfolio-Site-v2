@@ -3,11 +3,77 @@
     "id": 1,
     "title": {
       "first": "Subber",
-      "second": "App"
+      "second": ""
     },
     "image": "/img/portfolio/projects/subber-app-mockup.png",
     "sub": "Software dev",
     "link": "/#",
     "paragraph": "a time in a world of ones and zeroes, ideas whispered, waiting to grow. With code as my canvas, I shape visions into reality—each line a step toward innovation. Whether an AI-driven tool, a seamless platform, or a bold new idea, I bring it to life with precision and creativity. Let’s build something extraordinary—your vision, my code. Ready to start?"
+  },
+  {
+    "id": 2,
+    "title": {
+      "first": "Car",
+      "second": "rental"
+    },
+    "image": "/img/portfolio/projects/car-rental-app.png",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": ""
+  },
+  {
+    "id": 3,
+    "title": {
+      "first": "Rent ",
+      "second": "a car"
+    },
+    "image": "/img/portfolio/projects/car-rental-app-details-screen.png",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": ""
+  },
+  {
+    "id": 4,
+    "title": {
+      "first": "cash",
+      "second": "app"
+    },
+    "image": "/img/portfolio/projects/car-rental-app-cashapp-screen.png",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": ""
+  },
+  {
+    "id": 5,
+    "title": {
+      "first": "card",
+      "second": "pay"
+    },
+    "image": "/img/portfolio/projects/car-rental-app-cardpayment-screen.png",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": ""
+  },
+  {
+    "id": 6,
+    "title": {
+      "first": "book",
+      "second": "ings"
+    },
+    "image": "/img/portfolio/projects/car-rental-app-booking-screen.png",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": ""
+  },
+  {
+    "id": 7,
+    "title": {
+      "first": "Car",
+      "second": "location"
+    },
+    "image": "/img/portfolio/projects/car-rental-app-map-screen.png",
+    "sub": "Software dev",
+    "link": "/#",
+    "paragraph": ""
   }
 ]

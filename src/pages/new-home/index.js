@@ -99,7 +99,7 @@ const OptimizedHomePage = () => {
         <MobileAppSlider />
         <Numbers1 />
         <Works1Slider />
-        <CallToAction img='/img/portfolio/full2/prince_profile.JPG' />
+        <CallToAction img='https://pbs.twimg.com/profile_banners/2956784302/1739495249/1500x500' />
         <Footer />
       </div>
     </>

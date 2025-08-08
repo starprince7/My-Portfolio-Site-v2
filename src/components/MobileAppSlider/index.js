@@ -30,8 +30,8 @@ const MobileAppSlider = () => {
             speed={1000}
             mousewheel={true}
             centeredSlides={true}
-            autoplay={true}
-            loop={true}
+            autoplay={false}
+            loop={false}
             spaceBetween={30}
             navigation={{
               prevEl: navigationPrevRef.current,

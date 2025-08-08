@@ -15,10 +15,7 @@ const IntroTxt = ({ subBG }) => {
               <h1>I'm software <span className="highlight">developer</span> with a special focus on
                 transforming ideas into code</h1>
               <p>
-                I'm a full stack software . If you're looking for a
-                developer who can bring your ideas to life and has a passion for
-                building client-facing applications, feel free to go through my
-                work.
+                Looking to bring your ideas to life, I'm here to help.
               </p>
               <a href="#0" className="btn-curve btn-lit mt-40">
                 <span>Get Started Now</span>
