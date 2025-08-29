@@ -1,7 +1,7 @@
 // import puppeteer from 'puppeteer-core';
 // import chromium from '@sparticuz/chromium';
 const puppeteer = require("puppeteer-core");
-const chromium = require("@sparticuz/chromium");
+const chromium = require("chrome-aws-lambda");
 
 // Ensure Node.js runtime and allow larger payloads for HTML input
 export const config = {
@@ -94,6 +94,7 @@ export default async function handler(req, res) {
       defaultViewport: chromium.defaultViewport,
       executablePath,
       headless: isHeadless,
+      ignoreHTTPSErrors: true,
     });
 
     const page = await browser.newPage();
