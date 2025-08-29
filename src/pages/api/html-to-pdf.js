@@ -1,5 +1,3 @@
-// import puppeteer from 'puppeteer-core';
-// import chromium from '@sparticuz/chromium';
 const puppeteer = require("puppeteer-core");
 const chromium = require("chrome-aws-lambda");
 
@@ -12,16 +10,6 @@ export const config = {
     responseLimit: false,
   },
 };
-
-// Utility: resolve an executablePath that works locally and on serverless
-async function getExecutablePath() {
-  // If a custom path is provided (e.g., local Chrome), prefer it
-  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-    return process.env.PUPPETEER_EXECUTABLE_PATH;
-  }
-  // Fallback to @sparticuz/chromium's helper (works on Vercel/Netlify/etc.)
-  return await chromium.executablePath();
-}
 
 // CORS helpers
 const ORIGIN_ALLOWLIST = (process.env.HTML_TO_PDF_CORS_ORIGINS || '')
@@ -37,15 +25,15 @@ function resolveCorsOrigin(req) {
 }
 
 export default async function handler(req, res) {
-  // CORS
+  // CORS handling
   const corsOrigin = resolveCorsOrigin(req);
   res.setHeader('Vary', 'Origin');
+  
   if (req.method === 'OPTIONS') {
     if (corsOrigin) {
       res.setHeader('Access-Control-Allow-Origin', corsOrigin);
     }
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    // Echo requested headers or fall back to common defaults
     const requested = req.headers['access-control-request-headers'];
     res.setHeader(
       'Access-Control-Allow-Headers',
@@ -56,17 +44,18 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Max-Age', '86400');
     return res.status(204).end();
   }
+  
   if (corsOrigin) {
     res.setHeader('Access-Control-Allow-Origin', corsOrigin);
-    // Expose header so browsers can read filename
     res.setHeader('Access-Control-Expose-Headers', 'Content-Disposition');
   }
 
-  if (req.method !== "POST" && req.method !== "OPTIONS") {
+  if (req.method !== "POST") {
     res.setHeader("Allow", "POST, OPTIONS");
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
+  // Parse request body
   let payload = req.body || {};
   if (typeof payload === "string") {
     try {
@@ -75,6 +64,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Invalid JSON body." });
     }
   }
+  
   const { html, url, fileName, pdfOptions, download } = payload;
 
   if (!html && !url) {
@@ -85,29 +75,29 @@ export default async function handler(req, res) {
 
   let browser;
   try {
-    const executablePath = await getExecutablePath();
-    const isHeadless =
-      chromium.headless !== undefined ? chromium.headless : "new";
-
+    // Launch browser with chrome-aws-lambda configuration
     browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath,
-      headless: isHeadless,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
       ignoreHTTPSErrors: true,
     });
 
     const page = await browser.newPage();
+    
+    // Set timeouts
     const timeout = Math.min(
       Math.max(
-        parseInt(process.env.HTML_TO_PDF_TIMEOUT_MS || "60000", 10) || 60000,
+        parseInt(process.env.HTML_TO_PDF_TIMEOUT_MS || "30000", 10) || 30000,
         10000
       ),
-      180000
+      60000 // Reduced max timeout for serverless
     );
     page.setDefaultNavigationTimeout(timeout);
     page.setDefaultTimeout(timeout);
 
+    // Load content
     if (url) {
       let parsed;
       try {
@@ -120,51 +110,91 @@ export default async function handler(req, res) {
           .status(400)
           .json({ error: "Only http/https URLs are allowed." });
       }
-      await page.goto(parsed.toString(), { waitUntil: "networkidle0" });
+      await page.goto(parsed.toString(), { 
+        waitUntil: "networkidle2", // Changed from networkidle0 for better performance
+        timeout 
+      });
     } else if (html) {
-      const baseUrl = (req.headers.origin || "http://localhost").replace(
-        /\/$/,
-        ""
-      );
+      // Inject base URL for relative resources
+      const baseUrl = (req.headers.origin || req.headers.referer || "http://localhost")
+        .replace(/\/$/, "");
+      
       const hasHead = /<head[\s>]/i.test(html);
       const hasBase = /<base\s+/i.test(html);
-      const injectedHtml = hasBase
-        ? html
-        : hasHead
-        ? html.replace(/<head(\s*>)/i, `<head$1<base href="${baseUrl}/">`)
-        : `<head><base href="${baseUrl}/"></head>` + html;
+      
+      let injectedHtml = html;
+      if (!hasBase) {
+        if (hasHead) {
+          injectedHtml = html.replace(
+            /<head(\s*>)/i, 
+            `<head$1\n<base href="${baseUrl}/">`
+          );
+        } else {
+          injectedHtml = `<head><base href="${baseUrl}/"></head>${html}`;
+        }
+      }
 
-      await page.setContent(injectedHtml, { waitUntil: "networkidle0" });
+      await page.setContent(injectedHtml, { 
+        waitUntil: "networkidle2",
+        timeout 
+      });
     }
 
+    // PDF generation options
     const defaultPdfOptions = {
       format: "A4",
       printBackground: true,
-      margin: { top: "0.5in", right: "0.5in", bottom: "0.5in", left: "0.5in" },
+      margin: { 
+        top: "0.5in", 
+        right: "0.5in", 
+        bottom: "0.5in", 
+        left: "0.5in" 
+      },
       preferCSSPageSize: false,
     };
 
     const options = { ...defaultPdfOptions, ...(pdfOptions || {}) };
     const pdfBuffer = await page.pdf(options);
 
+    // Set response headers
     const safeName = (fileName || "document").replace(/[^a-z0-9_\-\.]/gi, "_");
     const disposition = download === false ? "inline" : "attachment";
+    
     res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Length", pdfBuffer.length);
     res.setHeader(
       "Content-Disposition",
       `${disposition}; filename="${safeName}.pdf"`
     );
 
-    // Stream the buffer
-    res.status(200).send(Buffer.from(pdfBuffer));
+    // Send PDF
+    return res.status(200).send(pdfBuffer);
+
   } catch (err) {
     console.error("[html-to-pdf] Error:", err);
-    return res.status(500).json({ error: "Failed to generate PDF" });
+    
+    // More specific error messages for debugging
+    let errorMessage = "Failed to generate PDF";
+    if (err.message.includes("Navigation timeout")) {
+      errorMessage = "Page load timeout - try reducing content complexity";
+    } else if (err.message.includes("net::ERR_")) {
+      errorMessage = "Network error - check URL accessibility";
+    } else if (err.message.includes("Protocol error")) {
+      errorMessage = "Browser protocol error - possible memory limit exceeded";
+    }
+    
+    return res.status(500).json({ 
+      error: errorMessage,
+      details: process.env.NODE_ENV === 'development' ? err.message : undefined
+    });
+    
   } finally {
     if (browser) {
       try {
         await browser.close();
-      } catch (_) {}
+      } catch (closeError) {
+        console.error("Error closing browser:", closeError);
+      }
     }
   }
 }
