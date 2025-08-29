@@ -23,7 +23,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "css")],
   },
-  trailingSlash: true,
+  trailingSlash: false,
   devIndicators: {
     buildActivity: false,
   },

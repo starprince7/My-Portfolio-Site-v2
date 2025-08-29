@@ -45,7 +45,14 @@ export default async function handler(req, res) {
       res.setHeader('Access-Control-Allow-Origin', corsOrigin);
     }
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    // Echo requested headers or fall back to common defaults
+    const requested = req.headers['access-control-request-headers'];
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      requested && typeof requested === 'string'
+        ? requested
+        : 'Content-Type, Authorization'
+    );
     res.setHeader('Access-Control-Max-Age', '86400');
     return res.status(204).end();
   }
