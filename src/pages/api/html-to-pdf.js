@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer-core");
 const chromium = require("@sparticuz/chromium");
 
-// Ensure Node.js runtime and allow larger payloads for HTML input
+// Configuration for Next.js 12
 export const config = {
   api: {
     bodyParser: {
