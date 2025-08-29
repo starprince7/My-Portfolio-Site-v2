@@ -23,9 +23,40 @@ async function getExecutablePath() {
   return await chromium.executablePath();
 }
 
+// CORS helpers
+const ORIGIN_ALLOWLIST = (process.env.HTML_TO_PDF_CORS_ORIGINS || '')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
+
+function resolveCorsOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return null;
+  if (ORIGIN_ALLOWLIST.includes('*')) return '*';
+  return ORIGIN_ALLOWLIST.includes(origin) ? origin : null;
+}
+
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+  // CORS
+  const corsOrigin = resolveCorsOrigin(req);
+  res.setHeader('Vary', 'Origin');
+  if (req.method === 'OPTIONS') {
+    if (corsOrigin) {
+      res.setHeader('Access-Control-Allow-Origin', corsOrigin);
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Max-Age', '86400');
+    return res.status(204).end();
+  }
+  if (corsOrigin) {
+    res.setHeader('Access-Control-Allow-Origin', corsOrigin);
+    // Expose header so browsers can read filename
+    res.setHeader('Access-Control-Expose-Headers', 'Content-Disposition');
+  }
+
+  if (req.method !== "POST" && req.method !== "OPTIONS") {
+    res.setHeader("Allow", "POST, OPTIONS");
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
