@@ -75,12 +75,31 @@ export default async function handler(req, res) {
 
   let browser;
   try {
+    // Configure chromium settings for serverless
+    chromium.setHeadlessMode = true;
+    chromium.setGraphicsMode = false;
+    
+    // Custom args for better Vercel compatibility 
+    const chromeArgs = [
+      '--font-render-hinting=none',
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-gpu',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--disable-animations',
+      '--disable-background-timer-throttling',
+      '--disable-restore-session-state',
+      '--disable-web-security',
+      '--single-process',
+    ];
+
     // Launch browser with @sparticuz/chromium configuration
     browser = await puppeteer.launch({
-      args: chromium.args,
+      args: chromeArgs,
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
+      headless: true,
       ignoreHTTPSErrors: true,
     });
 

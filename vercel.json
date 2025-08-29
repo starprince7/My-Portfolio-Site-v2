@@ -1,0 +1,8 @@
+{
+    "functions": {
+      "pages/api/html-to-pdf.js": {
+        "maxDuration": 150,
+        "memory": 1024
+      }
+    }
+  }
