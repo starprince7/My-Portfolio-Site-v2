@@ -1,5 +1,5 @@
-const puppeteer = require("puppeteer-core");
-const chromium = require("@sparticuz/chromium");
+const { chromium } = require("playwright-core");
+const chromiumBrowser = require("@sparticuz/chromium");
 
 // Configuration for Next.js 12
 export const config = {
@@ -75,32 +75,11 @@ export default async function handler(req, res) {
 
   let browser;
   try {
-    // Configure chromium settings for serverless
-    chromium.setHeadlessMode = true;
-    chromium.setGraphicsMode = false;
-    
-    // Custom args for better Vercel compatibility 
-    const chromeArgs = [
-      '--font-render-hinting=none',
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-gpu',
-      '--disable-dev-shm-usage',
-      '--disable-accelerated-2d-canvas',
-      '--disable-animations',
-      '--disable-background-timer-throttling',
-      '--disable-restore-session-state',
-      '--disable-web-security',
-      '--single-process',
-    ];
-
-    // Launch browser with @sparticuz/chromium configuration
-    browser = await puppeteer.launch({
-      args: chromeArgs,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
+    // Launch browser with Playwright + @sparticuz/chromium
+    browser = await chromium.launch({
+      args: chromiumBrowser.args,
+      executablePath: await chromiumBrowser.executablePath(),
       headless: true,
-      ignoreHTTPSErrors: true,
     });
 
     const page = await browser.newPage();
@@ -111,10 +90,8 @@ export default async function handler(req, res) {
         parseInt(process.env.HTML_TO_PDF_TIMEOUT_MS || "30000", 10) || 30000,
         10000
       ),
-      60000 // Reduced max timeout for serverless
+      60000
     );
-    page.setDefaultNavigationTimeout(timeout);
-    page.setDefaultTimeout(timeout);
 
     // Load content
     if (url) {
@@ -130,7 +107,7 @@ export default async function handler(req, res) {
           .json({ error: "Only http/https URLs are allowed." });
       }
       await page.goto(parsed.toString(), { 
-        waitUntil: "networkidle2", // Changed from networkidle0 for better performance
+        waitUntil: "networkidle",
         timeout 
       });
     } else if (html) {
@@ -154,7 +131,7 @@ export default async function handler(req, res) {
       }
 
       await page.setContent(injectedHtml, { 
-        waitUntil: "networkidle2",
+        waitUntil: "networkidle",
         timeout 
       });
     }

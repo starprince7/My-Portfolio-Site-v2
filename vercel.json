@@ -2,8 +2,7 @@
     "functions": {
       "pages/api/html-to-pdf.js": {
         "maxDuration": 30,
-        "memory": 1024,
-        "runtime": "nodejs18.x"
+        "memory": 1024
       }
     }
   }
