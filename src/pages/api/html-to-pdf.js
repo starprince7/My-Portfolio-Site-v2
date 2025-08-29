@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer-core");
-const chromium = require("chrome-aws-lambda");
+const chromium = require("@sparticuz/chromium");
 
 // Ensure Node.js runtime and allow larger payloads for HTML input
 export const config = {
@@ -75,11 +75,11 @@ export default async function handler(req, res) {
 
   let browser;
   try {
-    // Launch browser with chrome-aws-lambda configuration
+    // Launch browser with @sparticuz/chromium configuration
     browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
+      executablePath: await chromium.executablePath(),
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
     });
