@@ -28,22 +28,18 @@ const BlogsThreeColumn2 = ({ subBG }) => {
                 <img src="/img/blog/1.jpg" alt="" />
               </div>
               <div className="cont">
-                <Link href="/blog/blog-dark">
-                  <a className="date custom-font">
-                    <span>
-                      <i>06</i> August
-                    </span>
-                  </a>
+                <Link href="/blog/blog-dark" className="date custom-font">
+                  <span>
+                    <i>06</i> August
+                  </span>
                 </Link>
 
                 <div className="info custom-font">
-                  <a href="#0" className="author">
+                  <Link href="#0" className="author">
                     <span>by / Admin</span>
-                  </a>
-                  <Link href="/blog/blog-dark">
-                    <a className="tag">
-                      <span>WordPress</span>
-                    </a>
+                  </Link>
+                  <Link href="/blog/blog-dark" className="tag">
+                    <span>WordPress</span>
                   </Link>
                 </div>
                 <h6>
@@ -52,8 +48,8 @@ const BlogsThreeColumn2 = ({ subBG }) => {
                   </Link>
                 </h6>
                 <div className="btn-more custom-font">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a className="simple-btn">Read More</a>
+                  <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                    Read More
                   </Link>
                 </div>
               </div>
@@ -68,21 +64,17 @@ const BlogsThreeColumn2 = ({ subBG }) => {
                 <img src="/img/blog/2.jpg" alt="" />
               </div>
               <div className="cont">
-                <Link href="/blog/blog-dark">
-                  <a className="date custom-font">
-                    <span>
-                      <i>07</i> August
-                    </span>
-                  </a>
+                <Link href="/blog/blog-dark" className="date custom-font">
+                  <span>
+                    <i>07</i> August
+                  </span>
                 </Link>
                 <div className="info custom-font">
-                  <a href="#0" className="author">
+                  <Link href="#0" className="author">
                     <span>by / Admin</span>
-                  </a>
-                  <Link href="/blog/blog-dark">
-                    <a className="tag">
-                      <span>WordPress</span>
-                    </a>
+                  </Link>
+                  <Link href="/blog/blog-dark" className="tag">
+                    <span>WordPress</span>
                   </Link>
                 </div>
                 <h6>
@@ -91,8 +83,8 @@ const BlogsThreeColumn2 = ({ subBG }) => {
                   </Link>
                 </h6>
                 <div className="btn-more custom-font">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a className="simple-btn">Read More</a>
+                  <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                    Read More
                   </Link>
                 </div>
               </div>
@@ -104,21 +96,17 @@ const BlogsThreeColumn2 = ({ subBG }) => {
                 <img src="/img/blog/3.jpg" alt="" />
               </div>
               <div className="cont">
-                <Link href="/blog/blog-dark">
-                  <a className="date custom-font">
-                    <span>
-                      <i>08</i> August
-                    </span>
-                  </a>
+                <Link href="/blog/blog-dark" className="date custom-font">
+                  <span>
+                    <i>08</i> August
+                  </span>
                 </Link>
                 <div className="info custom-font">
-                  <a href="#0" className="author">
+                  <Link href="#0" className="author">
                     <span>by / Admin</span>
-                  </a>
-                  <Link href="/blog/blog-dark">
-                    <a className="tag">
-                      <span>WordPress</span>
-                    </a>
+                  </Link>
+                  <Link href="/blog/blog-dark" className="tag">
+                    <span>WordPress</span>
                   </Link>
                 </div>
                 <h6>
@@ -127,8 +115,8 @@ const BlogsThreeColumn2 = ({ subBG }) => {
                   </Link>
                 </h6>
                 <div className="btn-more custom-font">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a className="simple-btn">Read More</a>
+                  <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                    Read More
                   </Link>
                 </div>
               </div>

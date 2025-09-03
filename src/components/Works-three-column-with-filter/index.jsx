@@ -39,10 +39,11 @@ const WorksThreeColumnWithFilter = ({ filterPosition }) => {
           <div className="gallery full-width">
             <div className="col-lg-4 col-md-6 items graphic lg-mr">
               <div className="item-img wow fadeInUp" data-wow-delay=".4s">
-                <Link href="/project-details/project-details-dark">
-                  <a>
-                    <img src="/img/portfolio/mas/01.jpg" alt="image" />
-                  </a>
+                <Link 
+                  href="/project-details/project-details-dark"
+                  className="work-item"
+                >
+                  <img src="/img/portfolio/mas/01.jpg" alt="Project 1" />
                 </Link>
               </div>
               <div className="cont">
@@ -55,10 +56,11 @@ const WorksThreeColumnWithFilter = ({ filterPosition }) => {
 
             <div className="col-lg-4 col-md-6 items web">
               <div className="item-img wow fadeInUp" data-wow-delay=".4s">
-                <Link href="/project-details/project-details-dark">
-                  <a>
-                    <img src="/img/portfolio/mas/02.jpg" alt="image" />
-                  </a>
+                <Link 
+                  href="/project-details/project-details-dark"
+                  className="work-item"
+                >
+                  <img src="/img/portfolio/mas/02.jpg" alt="Project 2" />
                 </Link>
               </div>
               <div className="cont">
@@ -71,10 +73,11 @@ const WorksThreeColumnWithFilter = ({ filterPosition }) => {
 
             <div className="col-lg-4 col-md-6 items brand lg-mr">
               <div className="item-img wow fadeInUp" data-wow-delay=".4s">
-                <Link href="/project-details/project-details-dark">
-                  <a>
-                    <img src="/img/portfolio/mas/03.jpg" alt="image" />
-                  </a>
+                <Link 
+                  href="/project-details/project-details-dark"
+                  className="work-item"
+                >
+                  <img src="/img/portfolio/mas/03.jpg" alt="Project 3" />
                 </Link>
               </div>
               <div className="cont">
@@ -87,10 +90,10 @@ const WorksThreeColumnWithFilter = ({ filterPosition }) => {
 
             <div className="col-lg-4 col-md-6 items brand">
               <div className="item-img wow fadeInUp" data-wow-delay=".4s">
-                <Link href="/project-details/project-details-dark">
-                  <a>
-                    <img src="/img/portfolio/mas/06.jpg" alt="image" />
-                  </a>
+                <Link 
+                  href="/project-details/project-details-dark"
+                  className="work-item"">
+                  <img src="/img/portfolio/mas/06.jpg" alt="Project 4" />
                 </Link>
               </div>
               <div className="cont">
@@ -103,10 +106,11 @@ const WorksThreeColumnWithFilter = ({ filterPosition }) => {
 
             <div className="col-lg-4 col-md-6 items web">
               <div className="item-img wow fadeInUp" data-wow-delay=".4s">
-                <Link href="/project-details/project-details-dark">
-                  <a>
-                    <img src="/img/portfolio/mas/05.jpg" alt="image" />
-                  </a>
+                <Link 
+                  href="/project-details/project-details-dark"
+                  className="work-item"
+                >
+                  <img src="/img/portfolio/mas/05.jpg" alt="Project 5" />
                 </Link>
               </div>
               <div className="cont">
@@ -119,10 +123,11 @@ const WorksThreeColumnWithFilter = ({ filterPosition }) => {
 
             <div className="col-lg-4 col-md-6 items graphic">
               <div className="item-img wow fadeInUp" data-wow-delay=".4s">
-                <Link href="/project-details/project-details-dark">
-                  <a>
-                    <img src="/img/portfolio/mas/04.jpg" alt="image" />
-                  </a>
+                <Link 
+                  href="/project-details/project-details-dark"
+                  className="work-item"
+                >
+                  <img src="/img/portfolio/mas/04.jpg" alt="Project 6" />
                 </Link>
               </div>
               <div className="cont">

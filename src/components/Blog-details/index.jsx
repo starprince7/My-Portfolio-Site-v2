@@ -168,7 +168,12 @@ const BlogDetails = ({ article }) => {
                         </div>
                         <div className="tags">
                           {keyWords?.map((word, index) => (
-                            <a href="#0" key={index}>{word},</a>
+                            <React.Fragment key={index}>
+                              <Link href={`/blog/tag/${word.toLowerCase()}`} className="tag-link">
+                                {word}
+                              </Link>
+                              {index < keyWords.length - 1 ? ',' : ''}
+                            </React.Fragment>
                           ))}
                         </div>
                       </div>
@@ -192,13 +197,13 @@ const BlogDetails = ({ article }) => {
                           enterprises.
                         </p>
                         <div className="social">
-                          <a href="https://twitter.com/@dev_starprince">
+                          <a href="https://twitter.com/@dev_starprince" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-twitter"></i>
                           </a>
-                          <a href="https://github.com/starprince7">
+                          <a href="https://github.com/starprince7" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-github"></i>
                           </a>
-                          <a href="https://www.linkedin.com/in/prince-nweke-295a5b191/">
+                          <a href="https://www.linkedin.com/in/prince-nweke-295a5b191/" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-linkedin"></i>
                           </a>
                         </div>

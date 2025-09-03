@@ -74,6 +74,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          {/* Global stylesheets moved from components */}
+          <link rel="stylesheet" href="/css/ionicons.min.css" />
+          <link rel="stylesheet" href="/css/dark.css" />
+          <link rel="stylesheet" href="/css/light.css" />
         </Head>
 
         <body>

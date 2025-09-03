@@ -22,7 +22,7 @@ const ProjectDetails2Header = () => {
             <div className="item mt-30">
               <h6>Client</h6>
               <p>
-                <a href="#0">Envato.com</a>
+                <Link href="#0">Envato.com</Link>
               </p>
             </div>
           </div>

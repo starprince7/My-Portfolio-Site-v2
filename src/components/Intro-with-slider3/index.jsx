@@ -92,10 +92,11 @@ const IntroWithSlider3 = () => {
                           strategy, ux structure or you do have some cool ideas
                           for collaboration.
                         </p>
-                        <Link href="/works3/works3-dark">
-                          <a className="btn-curve btn-color btn-radius mt-30">
-                            <span>Discover Work</span>
-                          </a>
+                        <Link 
+                          href="/works3/works3-dark" 
+                          className="btn-curve btn-color btn-radius mt-30"
+                        >
+                          <span>Discover Work</span>
                         </Link>
                       </div>
                     </div>

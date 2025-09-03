@@ -62,16 +62,10 @@ const BlogsTwoColumnSlider = () => {
                   <div className="cont valign">
                     <div className="full-width">
                       <div className="info custom-font">
-                        <a href="#0" className="author">
-                          <span>by / Admin</span>
-                        </a>
-                        <Link href="/blog/blog-dark">
-                          <a className="date">
-                            <span>
-                              <i>06</i> Aug
-                            </span>
-                          </a>
-                        </Link>
+                        <span className="author">by / Admin</span>
+                        <span className="date">
+                          <i>06</i> Aug
+                        </span>
                       </div>
                       <h6 className="custom-font">
                         <Link href="/blog-details/blog-details-dark">
@@ -80,8 +74,8 @@ const BlogsTwoColumnSlider = () => {
                         </Link>
                       </h6>
                       <div className="btn-more custom-font">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a className="simple-btn">Read More</a>
+                        <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                          Read More
                         </Link>
                       </div>
                     </div>
@@ -99,16 +93,10 @@ const BlogsTwoColumnSlider = () => {
                   <div className="cont valign">
                     <div className="full-width">
                       <div className="info custom-font">
-                        <a href="#0" className="author">
-                          <span>by / Admin</span>
-                        </a>
-                        <Link href="/blog/blog-dark">
-                          <a className="date">
-                            <span>
-                              <i>08</i> Aug
-                            </span>
-                          </a>
-                        </Link>
+                        <span className="author">by / Admin</span>
+                        <span className="date">
+                          <i>08</i> Aug
+                        </span>
                       </div>
                       <h6 className="custom-font">
                         <Link href="/blog-details/blog-details-dark">
@@ -117,8 +105,8 @@ const BlogsTwoColumnSlider = () => {
                         </Link>
                       </h6>
                       <div className="btn-more custom-font">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a className="simple-btn">Read More</a>
+                        <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                          Read More
                         </Link>
                       </div>
                     </div>
@@ -136,16 +124,10 @@ const BlogsTwoColumnSlider = () => {
                   <div className="cont valign">
                     <div className="full-width">
                       <div className="info custom-font">
-                        <a href="#0" className="author">
-                          <span>by / Admin</span>
-                        </a>
-                        <Link href="/blog/blog-dark">
-                          <a className="date">
-                            <span>
-                              <i>07</i> Aug
-                            </span>
-                          </a>
-                        </Link>
+                        <span className="author">by / Admin</span>
+                        <span className="date">
+                          <i>07</i> Aug
+                        </span>
                       </div>
                       <h6 className="custom-font">
                         <Link href="/blog-details/blog-details-dark">
@@ -154,8 +136,8 @@ const BlogsTwoColumnSlider = () => {
                         </Link>
                       </h6>
                       <div className="btn-more custom-font">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a className="simple-btn">Read More</a>
+                        <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                          Read More
                         </Link>
                       </div>
                     </div>
@@ -173,16 +155,10 @@ const BlogsTwoColumnSlider = () => {
                   <div className="cont valign">
                     <div className="full-width">
                       <div className="info custom-font">
-                        <a href="#0" className="author">
-                          <span>by / Admin</span>
-                        </a>
-                        <Link href="/blog/blog-dark">
-                          <a className="date">
-                            <span>
-                              <i>10</i> Aug
-                            </span>
-                          </a>
-                        </Link>
+                        <span className="author">by / Admin</span>
+                        <span className="date">
+                          <i>10</i> Aug
+                        </span>
                       </div>
                       <h6 className="custom-font">
                         <Link href="/blog-details/blog-details-dark">
@@ -191,8 +167,8 @@ const BlogsTwoColumnSlider = () => {
                         </Link>
                       </h6>
                       <div className="btn-more custom-font">
-                        <Link href="/blog-details/blog-details-dark">
-                          <a className="simple-btn">Read More</a>
+                        <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                          Read More
                         </Link>
                       </div>
                     </div>

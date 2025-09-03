@@ -1,31 +1,40 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState, useRef } from "react";
 import introData from "../../data/sections/intro.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
-import SwiperCore, { Navigation, Pagination, Parallax, Autoplay } from "swiper";
+import { Navigation, Pagination, Parallax, Autoplay, A11y } from "swiper/modules";
 
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/parallax";
+import "swiper/css/autoplay";
 import Split from "../Split";
 import fadeWhenScroll from "../../common/fadeWhenScroll";
 import removeSlashFromPagination from "../../common/removeSlashFromPagination";
 
-SwiperCore.use([Navigation, Pagination, Parallax, Autoplay]);
-
 const IntroWithSlider1 = ({ sliderRef }) => {
-  const [load, setLoad] = React.useState(true);
-  React.useEffect(() => {
+  const [mounted, setMounted] = useState(false);
+  const [load, setLoad] = useState(true);
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
+  const paginationRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
     fadeWhenScroll();
-    setTimeout(() => {
+    
+    const timer = setTimeout(() => {
       setLoad(false);
       removeSlashFromPagination();
     }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const navigationPrevRef = React.useRef(null);
-  const navigationNextRef = React.useRef(null);
-  const paginationRef = React.useRef(null);
 
   return (
     <header
@@ -35,20 +44,24 @@ const IntroWithSlider1 = ({ sliderRef }) => {
       <div className="swiper-container parallax-slider">
         {!load ? (
           <Swiper
+            modules={[Navigation, Pagination, Parallax, Autoplay, A11y]}
             speed={1000}
             autoplay={{
-              delay: 1000,
-              disableOnInteraction: true,
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
             }}
             parallax={true}
             navigation={{
               prevEl: navigationPrevRef.current,
               nextEl: navigationNextRef.current,
+              disabledClass: 'swiper-button-disabled',
             }}
             pagination={{
               type: "fraction",
               clickable: true,
               el: paginationRef.current,
+              dynamicBullets: true,
             }}
             onBeforeInit={(swiper) => {
               swiper.params.navigation.prevEl = navigationPrevRef.current;
@@ -57,29 +70,22 @@ const IntroWithSlider1 = ({ sliderRef }) => {
             }}
             onSwiper={(swiper) => {
               setTimeout(() => {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                  swiper.slides[i].childNodes[0].setAttribute(
+                for (let i = 0; i < swiper.slides.length; i++) {
+                  swiper.slides[i].childNodes[0]?.setAttribute(
                     "data-swiper-parallax",
                     0.75 * swiper.width
                   );
                 }
-
-                swiper.params.navigation.prevEl = navigationPrevRef.current;
-                swiper.params.navigation.nextEl = navigationNextRef.current;
-
-                swiper.params.pagination.el = paginationRef.current;
-
-                swiper.navigation.destroy();
-                swiper.navigation.init();
-                swiper.navigation.update();
-
-                swiper.pagination.destroy();
-                swiper.pagination.init();
-                swiper.pagination.update();
               });
             }}
             className="swiper-wrapper"
             slidesPerView={1}
+            loop={true}
+            grabCursor={true}
+            keyboard={{
+              enabled: true,
+              onlyInViewport: true,
+            }}
           >
             {introData.map((slide) => (
               <SwiperSlide key={slide.id} className="swiper-slide">
@@ -105,10 +111,11 @@ const IntroWithSlider1 = ({ sliderRef }) => {
                             </h1>
                           </Split>
                           {slide?.content && <p>{slide.content}</p>}
-                          <Link href="/about/about-dark">
-                            <a className="btn-curve btn-lit mt-30">
-                              <span>Look More</span>
-                            </a>
+                          <Link 
+                            href="/about/about-dark" 
+                            className="btn-curve btn-lit mt-30"
+                          >
+                            <span>Look More</span>
                           </Link>
                         </div>
                       </div>

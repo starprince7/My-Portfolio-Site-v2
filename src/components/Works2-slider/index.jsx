@@ -1,32 +1,34 @@
-/* eslint-disable @next/next/no-css-tags */
-import Head from "next/head";
-import Link from "next/link";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+"use client";
 
+/* eslint-disable @next/next/no-css-tags */
+import Link from "next/link";
+import React, { useEffect, useState, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, A11y, Keyboard } from "swiper/modules";
+
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/keyboard";
 import Split from "../Split";
 
-SwiperCore.use([Navigation]);
-
 const Works2Slider = ({ subBG }) => {
-  const [load, setLoad] = React.useState(true);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setLoad(false);
-    });
-  }, []);
+  const [mounted, setMounted] = useState(false);
+  const [load, setLoad] = useState(true);
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
 
-  const navigationPrevRef = React.useRef(null);
-  const navigationNextRef = React.useRef(null);
+  useEffect(() => {
+    setMounted(true);
+    const timer = setTimeout(() => {
+      setLoad(false);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="/css/ionicons.min.css" />
-      </Head>
       <section
         className={`work-carousel section-padding caroul ${
           subBG ? "sub-bg" : ""
@@ -50,6 +52,7 @@ const Works2Slider = ({ subBG }) => {
                 <div className="swiper-container">
                   {!load ? (
                     <Swiper
+                      modules={[Navigation, A11y, Keyboard]}
                       speed={1000}
                       loop={true}
                       spaceBetween={0}
@@ -74,24 +77,16 @@ const Works2Slider = ({ subBG }) => {
                       navigation={{
                         prevEl: navigationPrevRef.current,
                         nextEl: navigationNextRef.current,
+                        disabledClass: 'swiper-button-disabled',
                       }}
                       onBeforeInit={(swiper) => {
-                        swiper.params.navigation.prevEl =
-                          navigationPrevRef.current;
-                        swiper.params.navigation.nextEl =
-                          navigationNextRef.current;
+                        swiper.params.navigation.prevEl = navigationPrevRef.current;
+                        swiper.params.navigation.nextEl = navigationNextRef.current;
                       }}
-                      onSwiper={(swiper) => {
-                        setTimeout(() => {
-                          swiper.params.navigation.prevEl =
-                            navigationPrevRef.current;
-                          swiper.params.navigation.nextEl =
-                            navigationNextRef.current;
-
-                          swiper.navigation.destroy();
-                          swiper.navigation.init();
-                          swiper.navigation.update();
-                        });
+                      grabCursor={true}
+                      keyboard={{
+                        enabled: true,
+                        onlyInViewport: true,
                       }}
                       className="swiper-wrapper"
                       slidesPerView={1}
@@ -108,23 +103,24 @@ const Works2Slider = ({ subBG }) => {
                             }}
                           ></div>
                           <div className="cont bgbox">
-                            <h6>
+                            <h6 className="category-link">
                               <Link href="/works2/works2-dark">
-                                art &amp; illustration
+                                art & illustration
                               </Link>
                             </h6>
-                            <h4>
+                            <h4 className="project-title">
                               <Link href="/project-details/project-details-dark">
-                                <a>Innovation and Crafts.</a>
+                                Innovation and Crafts.
                               </Link>
                             </h4>
-                            <Link href="/project-details2/project-details2-dark">
-                              <a>
-                                <span className="icon">
-                                  <i className="fas fa-plus"></i>
-                                </span>
-                              </a>
-                            </Link>
+                            <div className="icon-link">
+                              <Link 
+                                href="/project-details2/project-details2-dark" 
+                                aria-label="View project details"
+                              >
+                                <i className="fas fa-plus"></i>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -140,23 +136,24 @@ const Works2Slider = ({ subBG }) => {
                             }}
                           ></div>
                           <div className="cont bgbox">
-                            <h6>
+                            <h6 className="category-link">
                               <Link href="/works2/works2-dark">
-                                art &amp; illustration
+                                art & illustration
                               </Link>
                             </h6>
-                            <h4>
+                            <h4 className="project-title">
                               <Link href="/project-details/project-details-dark">
-                                <a>Inspiring new space.</a>
+                                Inspiring new space.
                               </Link>
                             </h4>
-                            <Link href="/project-details2/project-details2-dark">
-                              <a>
-                                <span className="icon">
-                                  <i className="fas fa-plus"></i>
-                                </span>
-                              </a>
-                            </Link>
+                            <div className="icon-link">
+                              <Link 
+                                href="/project-details2/project-details2-dark" 
+                                aria-label="View project details"
+                              >
+                                <i className="fas fa-plus"></i>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -172,23 +169,24 @@ const Works2Slider = ({ subBG }) => {
                             }}
                           ></div>
                           <div className="cont bgbox">
-                            <h6>
+                            <h6 className="category-link">
                               <Link href="/works2/works2-dark">
-                                art &amp; illustration
+                                art & illustration
                               </Link>
                             </h6>
-                            <h4>
+                            <h4 className="project-title">
                               <Link href="/project-details/project-details-dark">
-                                <a>Natural plus modern.</a>
+                                Natural plus modern.
                               </Link>
                             </h4>
-                            <Link href="/project-details2/project-details2-dark">
-                              <a>
-                                <span className="icon">
-                                  <i className="fas fa-plus"></i>
-                                </span>
-                              </a>
-                            </Link>
+                            <div className="icon-link">
+                              <Link 
+                                href="/project-details2/project-details2-dark" 
+                                aria-label="View project details"
+                              >
+                                <i className="fas fa-plus"></i>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -204,23 +202,24 @@ const Works2Slider = ({ subBG }) => {
                             }}
                           ></div>
                           <div className="cont bgbox">
-                            <h6>
+                            <h6 className="category-link">
                               <Link href="/works2/works2-dark">
-                                art &amp; illustration
+                                art & illustration
                               </Link>
                             </h6>
-                            <h4>
+                            <h4 className="project-title">
                               <Link href="/project-details/project-details-dark">
-                                <a>Innovation and Crafts.</a>
+                                Innovation and Crafts.
                               </Link>
                             </h4>
-                            <Link href="/project-details2/project-details2-dark">
-                              <a>
-                                <span className="icon">
-                                  <i className="fas fa-plus"></i>
-                                </span>
-                              </a>
-                            </Link>
+                            <div className="icon-link">
+                              <Link 
+                                href="/project-details2/project-details2-dark" 
+                                aria-label="View project details"
+                              >
+                                <i className="fas fa-plus"></i>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -236,23 +235,24 @@ const Works2Slider = ({ subBG }) => {
                             }}
                           ></div>
                           <div className="cont bgbox">
-                            <h6>
+                            <h6 className="category-link">
                               <Link href="/works2/works2-dark">
-                                art &amp; illustration
+                                art & illustration
                               </Link>
                             </h6>
-                            <h4>
+                            <h4 className="project-title">
                               <Link href="/project-details/project-details-dark">
-                                <a>Inspiring new space.</a>
+                                Inspiring new space.
                               </Link>
                             </h4>
-                            <Link href="/project-details2/project-details2-dark">
-                              <a>
-                                <span className="icon">
-                                  <i className="fas fa-plus"></i>
-                                </span>
-                              </a>
-                            </Link>
+                            <div className="icon-link">
+                              <Link 
+                                href="/project-details2/project-details2-dark" 
+                                aria-label="View project details"
+                              >
+                                <i className="fas fa-plus"></i>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>

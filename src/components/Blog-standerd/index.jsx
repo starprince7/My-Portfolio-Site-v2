@@ -16,12 +16,10 @@ const BlogStanderd = () => {
                   {/* Image Section - Start */}
                   <div className="img">
                     <Link href={article.articleUrl}>
-                      <a>
-                        <img
-                          src={article.articleImage}
-                          alt={article.articleTitle}
-                        />
-                      </a>
+                      <img
+                        src={article.articleImage}
+                        alt={article.articleTitle}
+                      />
                     </Link>
                   </div>
                   {/* Image Section - End */}
@@ -30,22 +28,22 @@ const BlogStanderd = () => {
                   <div className="content">
                     <div className="row">
                       <div className="col-10">
-                        <a href="#0" className="date">
+                        <Link href="#0" className="date">
                           <span className="num">{article.articleDate}</span>
-                        </a>
+                        </Link>
                         <div className="tags">
                           {article.keyWords.map((word, index) => (
-                            <a href="#0" key={index}>{word}</a>
+                            <Link href="#0" key={index}>{word}</Link>
                           ))}
                         </div>
                         <h4 className="title">
                           <Link href={article.articleUrl}>
-                            <a>{article.articleTitle}</a>
+                            {article.articleTitle}
                           </Link>
                         </h4>
                         <p>{article.articleSnippet}</p>
-                        <Link href={article.articleUrl}>
-                          <a className="simple-btn mt-30">Read More</a>
+                        <Link href={article.articleUrl} className="simple-btn mt-30">
+                          Read More
                         </Link>
                       </div>
                     </div>
@@ -57,15 +55,15 @@ const BlogStanderd = () => {
               {blogArticles.length > 10 && (
                 <div className="pagination">
                   <span className="active">
-                    <a href="#0">1</a>
+                    <Link href="#0">1</Link>
                   </span>
                   <span>
-                    <a href="#0">2</a>
+                    <Link href="#0">2</Link>
                   </span>
                   <span>
-                    <a href="#0">
+                    <Link href="#0">
                       <i className="fas fa-angle-right"></i>
-                    </a>
+                    </Link>
                   </span>
                 </div>
               )}

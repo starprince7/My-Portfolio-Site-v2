@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Link from "next/link";
 import { Formik, Form, Field } from "formik";
 import appData from "../../data/app.json";
 
@@ -21,10 +22,10 @@ const Footer = () => {
           <div className="col-lg-5">
             <div className="cont">
               <div className="logo">
-                <a href="#0">
-                <h6 className="portfolio-logo">PRINCE NWEKE</h6>
+                <Link href="#0">
+                  <h6 className="portfolio-logo">PRINCE NWEKE</h6>
                   {/* <img src={`${appData.lightLogo}`} alt="" /> */}
-                </a>
+                </Link>
               </div>
               <div className="con-info custom-font">
                 <ul>
@@ -63,7 +64,7 @@ const Footer = () => {
         </div>
         <div className="copyrights text-center">
           <p>
-            © 2022 - {new Date().getFullYear()} <a href="#0" className="portfolio-logo-footer"> PRINCE NWEKE</a>
+            &copy; 2022 - {new Date().getFullYear()} <Link href="#0" className="portfolio-logo-footer"> PRINCE NWEKE</Link>
           </p>
         </div>
       </div>

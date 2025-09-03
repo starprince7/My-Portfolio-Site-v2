@@ -21,22 +21,12 @@ const BlogsThreeColumn1 = ({ subBG }) => {
               style={{ backgroundImage: "url(/img/blog/1.jpg)" }}
             >
               <div className="cont">
-                <Link href="/blog/blog-dark">
-                  <a className="date custom-font">
-                    <span>
-                      <i>06</i> Aug 2022
-                    </span>
-                  </a>
-                </Link>
+                <div className="date custom-font">
+                  <i>06</i> Aug 2022
+                </div>
                 <div className="info custom-font">
-                  <a href="#0" className="author">
-                    <span>by / Admin</span>
-                  </a>
-                  <Link href="/blog/blog-dark">
-                    <a className="tag">
-                      <span>WordPress</span>
-                    </a>
-                  </Link>
+                  <span className="author">by / Admin</span>
+                  <span className="tag">WordPress</span>
                 </div>
                 <h6>
                   <Link href="/blog-details/blog-details-dark">
@@ -44,8 +34,8 @@ const BlogsThreeColumn1 = ({ subBG }) => {
                   </Link>
                 </h6>
                 <div className="btn-more custom-font">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a className="simple-btn">Read More</a>
+                  <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                    Read More
                   </Link>
                 </div>
               </div>
@@ -57,22 +47,12 @@ const BlogsThreeColumn1 = ({ subBG }) => {
               style={{ backgroundImage: "url(/img/blog/2.jpg)" }}
             >
               <div className="cont">
-                <Link href="/blog/blog-dark">
-                  <a className="date custom-font">
-                    <span>
-                      <i>11</i> Aug 2022
-                    </span>
-                  </a>
-                </Link>
+                <div className="date custom-font">
+                  <i>11</i> Aug 2022
+                </div>
                 <div className="info custom-font">
-                  <a href="#0" className="author">
-                    <span>by / Admin</span>
-                  </a>
-                  <Link href="/blog/blog-dark">
-                    <a className="tag">
-                      <span>WordPress</span>
-                    </a>
-                  </Link>
+                  <span className="author">by / Admin</span>
+                  <span className="tag">WordPress</span>
                 </div>
                 <h6>
                   <Link href="/blog-details/blog-details-dark">
@@ -80,8 +60,8 @@ const BlogsThreeColumn1 = ({ subBG }) => {
                   </Link>
                 </h6>
                 <div className="btn-more custom-font">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a className="simple-btn">Read More</a>
+                  <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                    Read More
                   </Link>
                 </div>
               </div>
@@ -93,22 +73,12 @@ const BlogsThreeColumn1 = ({ subBG }) => {
               style={{ backgroundImage: "url(/img/blog/3.jpg)" }}
             >
               <div className="cont">
-                <Link href="/blog/blog-dark">
-                  <a className="date custom-font">
-                    <span>
-                      <i>09</i> Aug 2022
-                    </span>
-                  </a>
-                </Link>
+                <div className="date custom-font">
+                  <i>09</i> Aug 2022
+                </div>
                 <div className="info custom-font">
-                  <a href="#0" className="author">
-                    <span>by / Admin</span>
-                  </a>
-                  <Link href="/blog/blog-dark">
-                    <a className="tag">
-                      <span>WordPress</span>
-                    </a>
-                  </Link>
+                  <span className="author">by / Admin</span>
+                  <span className="tag">WordPress</span>
                 </div>
                 <h6>
                   <Link href="/blog-details/blog-details-dark">
@@ -116,8 +86,8 @@ const BlogsThreeColumn1 = ({ subBG }) => {
                   </Link>
                 </h6>
                 <div className="btn-more custom-font">
-                  <Link href="/blog-details/blog-details-dark">
-                    <a className="simple-btn">Read More</a>
+                  <Link href="/blog-details/blog-details-dark" className="simple-btn">
+                    Read More
                   </Link>
                 </div>
               </div>

@@ -11,13 +11,15 @@ const AboutDark = () => {
     return (
         <DarkTheme>
             <NavbarFullMenu />
+            <div style={{background: 'black'}}>
             <AboutDescription />
             <br />
             <br />
             <br />
             <br />
-            <SkillsCircle subBG theme="dark" />
+            {/* <SkillsCircle subBG theme="dark" /> */}
             <Footer />
+            </div>
         </DarkTheme>
     );
 };

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Link from 'next/link';
 import addParlx from '../../common/addParlx';
 
 const IntroTxt2 = () => {
@@ -15,9 +16,9 @@ const IntroTxt2 = () => {
               <h6>Unique Business.</h6>
               <h1>Creative Digital Agency</h1>
               <p>If you need to redesign your new project, new visual strategy, ux structure or you do have some cool ideas for collaboration.</p>
-              <a href="#0" className="btn-curve btn-lit mt-40">
+              <Link href="#0" className="btn-curve btn-lit mt-40">
                 <span>Get Started Now</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

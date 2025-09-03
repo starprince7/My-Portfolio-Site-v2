@@ -96,20 +96,30 @@ const PortfolioCustomColumn = ({
                 data-wow-delay=".4s"
               >
                 <div className="item-img">
-                  <a href={url} target="_blank" rel="noreferrer">
-                    <a className="imago wow">
+                  {url.startsWith('http') ? (
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="imago wow">
                       <Image width={width} height={height} src={image} alt="image" />
                       <div className="item-img-overlay"></div>
                     </a>
-                  </a>
+                  ) : (
+                    <Link href={url} className="imago wow">
+                      <Image width={width} height={height} src={image} alt={title} />
+                      <div className="item-img-overlay"></div>
+                    </Link>
+                  )}
                 </div>
                 <div className="cont">
                   <h6>{title}</h6>
                   <span>
                     {tags.map((tag, index) => (
                       <React.Fragment key={index * 3}>
-                        <Link href="/works4/works4-dark">{tag}</Link>
-                        {index == tags.length - 1 ? "" : ","}
+                        <Link 
+                          href={`/works4/works4-dark?tag=${tag.toLowerCase().replace(/\s+/g, '-')}`} 
+                          className="tag-link"
+                        >
+                          {tag}
+                        </Link>
+                        {index === tags.length - 1 ? '' : ', '}
                       </React.Fragment>
                     ))}
                   </span>

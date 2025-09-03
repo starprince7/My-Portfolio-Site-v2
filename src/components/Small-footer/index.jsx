@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 const SmallFooter = () => {
     return (
@@ -6,8 +7,8 @@ const SmallFooter = () => {
           <div className="container">
             <div className="copyrights text-center mt-0">
               <p>
-                © 2022, Avo Template. Made with passion by
-                <a href="#0">ThemesCamp</a>.
+                © 2022, Avo Template. Made with passion by{' '}
+                <Link href="#0" className="theme-camp-link">ThemesCamp</Link>.
               </p>
             </div>
           </div>

@@ -21,18 +21,16 @@ const Navbar = ({ lr, nr, theme }) => {
       }`}
     >
       <div className="container">
-        <Link href="/">
-          <a className="logo">
-            {theme ? (
-              theme === "themeL" ? (
-                <img ref={lr} src={`${appData.darkLogo}`} alt="logo" />
-              ) : (
-                <img ref={lr} src={`${appData.lightLogo}`} alt="logo" />
-              )
+        <Link href="/" className="logo">
+          {theme ? (
+            theme === "themeL" ? (
+              <img ref={lr} src={`${appData.darkLogo}`} alt="logo" />
             ) : (
               <img ref={lr} src={`${appData.lightLogo}`} alt="logo" />
-            )}
-          </a>
+            )
+          ) : (
+            <img ref={lr} src={`${appData.lightLogo}`} alt="logo" />
+          )}
         </Link>
 
         <button
@@ -63,21 +61,11 @@ const Navbar = ({ lr, nr, theme }) => {
                 Home
               </span>
               <div className="dropdown-menu">
-                <Link href="/home/home1-dark">
-                  <a className="dropdown-item">Main Home</a>
-                </Link>
-                <Link href="/home/home2-dark">
-                  <a className="dropdown-item">Creative Studio</a>
-                </Link>
-                <Link href="/home/home3-dark">
-                  <a className="dropdown-item">Business Startup</a>
-                </Link>
-                <Link href="/home/home4-dark">
-                  <a className="dropdown-item">One Page</a>
-                </Link>
-                <Link href="/home/home5-dark">
-                  <a className="dropdown-item">Freelancer</a>
-                </Link>
+                <Link href="/home/home1-dark" className="dropdown-item">Main Home</Link>
+                <Link href="/home/home2-dark" className="dropdown-item">Creative Studio</Link>
+                <Link href="/home/home3-dark" className="dropdown-item">Business Startup</Link>
+                <Link href="/home/home4-dark" className="dropdown-item">One Page</Link>
+                <Link href="/home/home5-dark" className="dropdown-item">Freelancer</Link>
               </div>
             </li>
 
@@ -92,27 +80,15 @@ const Navbar = ({ lr, nr, theme }) => {
                 Showcases
               </span>
               <div className="dropdown-menu">
-                <Link href="/showcase/showcase-dark">
-                  <a className="dropdown-item">Full Screen</a>
-                </Link>
-                <Link href="/showcase2/showcase2-dark">
-                  <a className="dropdown-item">Creative Carousel</a>
-                </Link>
-                <Link href="/showcase3/showcase3-dark">
-                  <a className="dropdown-item">Radius Carousel</a>
-                </Link>
-                <Link href="/showcase4/showcase4-dark">
-                  <a className="dropdown-item">Columns Carousel</a>
-                </Link>
-                <Link href="/showcase5/showcase5-dark">
-                  <a className="dropdown-item">Boxed Carousel</a>
-                </Link>
+                <Link href="/showcase/showcase-dark" className="dropdown-item">Full Screen</Link>
+                <Link href="/showcase2/showcase2-dark" className="dropdown-item">Creative Carousel</Link>
+                <Link href="/showcase3/showcase3-dark" className="dropdown-item">Radius Carousel</Link>
+                <Link href="/showcase4/showcase4-dark" className="dropdown-item">Columns Carousel</Link>
+                <Link href="/showcase5/showcase5-dark" className="dropdown-item">Boxed Carousel</Link>
               </div>
             </li>
             <li className="nav-item">
-              <Link href="/about/about-dark">
-                <a className="nav-link">About</a>
-              </Link>
+              <Link href="/about/about-dark" className="nav-link">About</Link>
             </li>
             <li className="nav-item dropdown" onClick={handleDropdown}>
               <span
@@ -125,24 +101,14 @@ const Navbar = ({ lr, nr, theme }) => {
                 portfolio
               </span>
               <div className="dropdown-menu">
-                <Link href="/works/works-dark">
-                  <a className="dropdown-item">Mouse Info</a>
-                </Link>
-                <Link href="/works2/works2-dark">
-                  <a className="dropdown-item">Masonry 3 Columns</a>
-                </Link>
-                <Link href="/works3/works3-dark">
-                  <a className="dropdown-item">Masonry 2 Columns</a>
-                </Link>
-                <Link href="/works4/works4-dark">
-                  <a className="dropdown-item">Pinterest List</a>
-                </Link>
+                <Link href="/works/works-dark" className="dropdown-item">Mouse Info</Link>
+                <Link href="/works2/works2-dark" className="dropdown-item">Masonry 3 Columns</Link>
+                <Link href="/works3/works3-dark" className="dropdown-item">Masonry 2 Columns</Link>
+                <Link href="/works4/works4-dark" className="dropdown-item">Pinterest List</Link>
               </div>
             </li>
             <li className="nav-item">
-              <Link href="/contact/contact-dark">
-                <a className="nav-link">Contact</a>
-              </Link>
+              <Link href="/contact/contact-dark" className="nav-link">Contact</Link>
             </li>
           </ul>
           <div className="search">

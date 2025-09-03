@@ -25,12 +25,10 @@ const NavbarFullMenu = ({ theme, lr }) => {
       >
         <div className="container-fluid">
           <div className="logo">
-            <Link href="/">
+            <Link href="/" className="logo-link">
               {theme ? (
                 theme === "light" ? (
-                  {
-                    /* <img src={`${appData.darkLogo}`} alt="logo" /> */
-                  }
+                  <h6 className="portfolio-logo">Starprince</h6>
                 ) : (
                   <img src={`${appData.lightLogo}`} alt="logo" />
                 )
@@ -61,72 +59,50 @@ const NavbarFullMenu = ({ theme, lr }) => {
                 <ul className="main-menu">
                   <li>
                     <div className="o-hidden">
-                      <Link href="/">
-                        <a className="link">
-                          <span className="nm">01.</span>Home
-                        </a>
+                      <Link href="/" className="link">
+                        <span className="nm">01.</span>Home
                       </Link>
                     </div>
                   </li>
 
                   <li>
                     <div className="o-hidden">
-                      <Link href="/about-me">
-                        <a className="link">
-                          <span className="nm">02.</span>About
-                        </a>
+                      <Link href="/about-me" className="link">
+                        <span className="nm">02.</span>About
                       </Link>
                     </div>
                   </li>
 
                   <li>
                     <div className="o-hidden">
-                      <Link href="/blog">
-                        <a className="link">
-                          <span className="nm">03.</span>Blog
-                        </a>
+                      <Link href="/blog" className="link">
+                        <span className="nm">03.</span>Blog
                       </Link>
                     </div>
                   </li>
 
                   <li>
                     <div className="o-hidden">
-                      <a href="/portfolio" className="link">
+                      <Link href="/portfolio" className="link">
                         <span className="nm">04.</span>Portfolio
-                      </a>
+                      </Link>
                     </div>
                   </li>
 
                   <li>
                     <div className="o-hidden">
-                      <Link href="/contact">
-                        <a className="link">
-                          <span className="nm">05.</span>Contact
-                        </a>
+                      <Link href="/contact" className="link">
+                        <span className="nm">05.</span>Contact
                       </Link>
                     </div>
                   </li>
-                  <li>
-                    <div className="o-hidden">
-                      <Link href="/resume/Prince_Nweke_Resume_July.pdf">
-                        <a className="link">
-                          <span className="nm">06.</span>Resume
-                        </a>
-                      </Link>
-                    </div>
-                  </li>
+                  
                 </ul>
               </div>
             </div>
             <div className="col-lg-3 col-md-4">
               <div className="cont-info">
-                <div className="item">
-                  <h6>Phone :</h6>
-                  {/* <a href="tel:+2349024847299"> <p>+234 902 484 7299</p></a> <br /> */}
-                  <a href="tel:+2347037130120">
-                    <p>+234 703 713 0120</p>
-                  </a>
-                </div>
+                
                 <div className="item">
                   <h6>Location :</h6>
                   <p>Lagos, Nigeria</p>
@@ -135,7 +111,7 @@ const NavbarFullMenu = ({ theme, lr }) => {
                   <h6>Email :</h6>
                   <p>
                     <a href="mailto:Princeagezinweke@gmail.com">
-                      Princeagezinweke@gmail.com
+                      hi@starprince.dev
                     </a>
                   </p>
                 </div>

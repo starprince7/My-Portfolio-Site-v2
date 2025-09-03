@@ -95,9 +95,9 @@ const OptimizedHomePage = () => {
       <Intro />
       
       {/* Non-critical content with lazy loading */}
-      <div className="main-content">
-        <MobileAppSlider />
-        <Numbers1 />
+      <div className="main-content" style={{background: 'black', paddingTop: 100}}>
+        {/* <MobileAppSlider /> */}
+        {/* <Numbers1 /> */}
         <Works1Slider />
         <CallToAction img='https://pbs.twimg.com/profile_banners/2956784302/1739495249/1500x500' />
         <Footer />

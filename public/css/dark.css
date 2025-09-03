@@ -3150,6 +3150,16 @@ body {
 .app-swiper-container {
   margin: 0 auto;
   max-width: 1300px !important;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 1rem; /* Optional: spacing between items */
+}
+
+@media (max-width: 768px) {
+  .app-swiper-container {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
 }
 .showstyle .swiper-slide .bg-img {
   height: 70vh;
