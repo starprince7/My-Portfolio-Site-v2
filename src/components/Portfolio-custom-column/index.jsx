@@ -99,11 +99,9 @@ const PortfolioCustomColumn = ({
                 data-wow-delay=".4s"
               >
                 <div className="item-img">
-                  <a href={url} target="_blank" rel="noreferrer">
-                    <a className="imago wow">
-                      <Image width={width} height={height} src={image} alt="image" />
-                      <div className="item-img-overlay"></div>
-                    </a>
+                  <a href={url} target="_blank" rel="noreferrer" className="imago wow">
+                    <Image width={width} height={height} src={image} alt="image" />
+                    <div className="item-img-overlay"></div>
                   </a>
                 </div>
                 <div className="cont">
