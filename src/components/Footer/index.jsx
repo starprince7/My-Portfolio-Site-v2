@@ -31,14 +31,10 @@ const Footer = () => {
                 <ul>
                   <li>
                     <a href="mailto:princeagezinweke@gmail.com">
-                      <span>Email : </span> Princeagezinweke@gmail.com
+                      <span>Email : </span> hi@starprince.dev
                     </a>
                   </li>
-                  <li>
-                    <a href="tel:+2349024847299">
-                      <span>Phone : </span> (+234) 902 484 7299
-                    </a>
-                  </li>
+                  
                 </ul>
               </div>
               <div className="social-icon">
