@@ -30,8 +30,8 @@ const Footer = () => {
               <div className="con-info custom-font">
                 <ul>
                   <li>
-                    <a href="mailto:princeagezinweke@gmail.com">
-                      <span>Email : </span> hi@starprince.dev
+                    <a href="mailto:hello@starprince.dev">
+                      <span>Email : </span> hello@starprince.dev
                     </a>
                   </li>
                   

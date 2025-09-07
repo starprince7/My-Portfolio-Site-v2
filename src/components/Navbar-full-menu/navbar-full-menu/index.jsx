@@ -110,8 +110,8 @@ const NavbarFullMenu = ({ theme, lr }) => {
                 <div className="item">
                   <h6>Email :</h6>
                   <p>
-                    <a href="mailto:Princeagezinweke@gmail.com">
-                      hi@starprince.dev
+                    <a href="mailto:hello@starprince.dev">
+                      hello@starprince.dev
                     </a>
                   </p>
                 </div>
