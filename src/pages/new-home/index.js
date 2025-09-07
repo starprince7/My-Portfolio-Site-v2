@@ -5,42 +5,86 @@ import Head from "next/head";
 // Critical components (load immediately)
 import NavbarFullMenu from "../../components/Navbar-full-menu/navbar-full-menu";
 import Intro from "../../components/Intro-txt";
+import AboutDescription from "../../components/AboutDescription";
 
 // Non-critical components (lazy load)
 const Works1Slider = dynamic(() => import("../../components/Works1-slider"), {
-  loading: () => <div className="loading-placeholder" style={{ height: '400px', background: '#1a1a1a' }} />,
+  loading: () => (
+    <div
+      className="loading-placeholder"
+      style={{ height: "400px", background: "#1a1a1a" }}
+    />
+  ),
   ssr: false, // Don't render on server for faster initial load
 });
 
 const Numbers1 = dynamic(() => import("../../components/Numbers"), {
-  loading: () => <div className="loading-placeholder" style={{ height: '200px', background: '#1a1a1a' }} />,
+  loading: () => (
+    <div
+      className="loading-placeholder"
+      style={{ height: "200px", background: "#1a1a1a" }}
+    />
+  ),
   ssr: false,
 });
 
-const MobileAppSlider = dynamic(() => import("../../components/MobileAppSlider"), {
-  loading: () => <div className="loading-placeholder" style={{ height: '500px', background: '#1a1a1a' }} />,
-  ssr: false,
-});
+const MobileAppShowCase = dynamic(
+  () => import("../../components/MobileAppShowCase2/mobile-apps"),
+  {
+    loading: () => (
+      <div
+        className="loading-placeholder"
+        style={{ height: "500px", background: "#1a1a1a" }}
+      />
+    ),
+    ssr: false,
+  }
+);
+
+const ConversationAI = dynamic(
+  () => import("../../components/ConversationAI/voice-ai"),
+  {
+    loading: () => (
+      <div
+        className="loading-placeholder"
+        style={{ height: "500px", background: "#1a1a1a" }}
+      />
+    ),
+    ssr: false,
+  }
+);
 
 const CallToAction = dynamic(() => import("../../components/Call-to-action"), {
-  loading: () => <div className="loading-placeholder" style={{ height: '300px', background: '#1a1a1a' }} />,
+  loading: () => (
+    <div
+      className="loading-placeholder"
+      style={{ height: "300px", background: "#1a1a1a" }}
+    />
+  ),
   ssr: false,
 });
 
 const Footer = dynamic(() => import("../../components/Footer"), {
-  loading: () => <div className="loading-placeholder" style={{ height: '400px', background: '#1a1a1a' }} />,
+  loading: () => (
+    <div
+      className="loading-placeholder"
+      style={{ height: "400px", background: "#1a1a1a" }}
+    />
+  ),
   ssr: false,
 });
 
 // Loading component for better UX
 const LoadingSpinner = () => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100px',
-    color: '#fff'
-  }}>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100px",
+      color: "#fff",
+    }}
+  >
     <div className="spinner">Loading...</div>
   </div>
 );
@@ -50,7 +94,9 @@ const OptimizedHomePage = () => {
     <>
       <Head>
         {/* Critical CSS - inline for fastest loading */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .loading-placeholder {
             background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
             background-size: 200% 100%;
@@ -76,32 +122,42 @@ const OptimizedHomePage = () => {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
           }
-        `}} />
+        `,
+          }}
+        />
 
         {/* Preload critical resources */}
         <link rel="preload" href="/svg/hero-back-dark.svg" as="image" />
         <link rel="preload" href="/css/dark.css" as="style" />
-        
+
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//res.cloudinary.com" />
-        
+
         {/* Resource hints */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
       </Head>
 
       {/* Critical above-the-fold content */}
       <NavbarFullMenu />
       <Intro />
-      
       {/* Non-critical content with lazy loading */}
-      <div className="main-content" style={{background: 'black', paddingTop: 100}}>
-        {/* <MobileAppSlider /> */}
+      <div
+        className="main-content"
+        style={{ background: "black", paddingBottom: 100 }}
+      >
+        <ConversationAI />
+        <MobileAppShowCase />
         {/* <Numbers1 /> */}
-        <Works1Slider />
-        <CallToAction img='https://pbs.twimg.com/profile_banners/2956784302/1739495249/1500x500' />
-        <Footer />
+        {/* <Works1Slider /> */}
+        {/* <AboutDescription /> */}
       </div>
+      <CallToAction img="https://pbs.twimg.com/profile_banners/2956784302/1739495249/1500x500" />
+      <Footer />
     </>
   );
 };

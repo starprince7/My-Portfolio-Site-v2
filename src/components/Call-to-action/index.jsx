@@ -28,13 +28,13 @@ const CallToAction = ({ img, theme, subBG }) => {
 
           <div className="col-md-4 col-lg-3 valign">
             <Link
-              href="/contact"
+              href="/portfolio"
               className={`btn-curve ${
                 theme == "light" ? "btn-blc" : "btn-lit"
               } wow fadeInUp`}
               data-wow-delay=".5s"
             >
-              <span>Get In Touch</span>
+              <span>View More Projects</span>
             </Link>
           </div>
         </div>

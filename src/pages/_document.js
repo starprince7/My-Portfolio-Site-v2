@@ -48,7 +48,7 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="Starprince Software developer" />
           <meta
             name="twitter:description"
-            content="Prince Nweke is an accomplished software engineer based in Lagos, Nigeria. He specialises in custom mobile and web development and standard practices with an emphasis on offering practical solutions to people and small enterprises."
+            content="Prince Nweke is an accomplished software engineer based in Lagos, Nigeria. He specializes in custom mobile and web development and standard practices with an emphasis on offering practical solutions to people and small enterprises."
           />
           <meta name="twitter:image" content={SEO_IMAGE} />
           <link rel="canonical" href="https://www.starprince.dev/" />

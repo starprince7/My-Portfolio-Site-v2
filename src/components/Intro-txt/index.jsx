@@ -1,6 +1,17 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const Works1Slider = dynamic(() => import("../Works1-slider"), {
+  loading: () => (
+    <div
+      className="loading-placeholder"
+      style={{ height: "400px", background: "#1a1a1a" }}
+    />
+  ),
+  ssr: false, // Don't render on server for faster initial load
+});
 
 const IntroTxt = ({ subBG }) => {
   return (
@@ -14,22 +25,22 @@ const IntroTxt = ({ subBG }) => {
           {/* Caption Section */}
           <div className="col-lg-6 mb-4 mb-lg-0">
             <div className="caption center mt-50">
-              <h6>{"</>"} Hi</h6>
+              <br />
+              <h6>Hello World {"</>"} </h6>
+              <br />
               <h1>
-                I'm a software <span className="highlight">developer</span> with a special focus on
-                transforming ideas into code
+                I'm a <i className="highlight">software</i> developer building
+                the next generation of intelligent systems
               </h1>
-              <p>
-                Looking to bring your ideas to life, I'm here to help.
-              </p>
+              <p>Looking to bring your ideas to life, I'm here to help.</p>
               <Link href="#0" className="btn-curve btn-lit mt-40">
-                Get Started Now
+                Let's Book a call
               </Link>
             </div>
           </div>
 
           {/* Image Section */}
-          <div className="col-lg-6">
+          {/* <div className="col-lg-6">
             <br />
             <br />
             <div data-overlay-dark="1" className="text-center">
@@ -42,6 +53,9 @@ const IntroTxt = ({ subBG }) => {
                 style={{ maxWidth: "380px", width: "100%" }}
               />
             </div>
+          </div> */}
+          <div className="col-lg-6 intro-txt-hero">
+            <Works1Slider hideControls />
           </div>
         </div>
       </div>

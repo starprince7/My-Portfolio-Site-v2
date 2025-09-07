@@ -7,7 +7,7 @@ import Cursor from "../components/Cursor";
 import ScrollToTop from "../components/Scroll-to-top";
 import LoadingScreen from "../components/Loading-Screen";
 import "../styles/globals.css";
-import 'animate.css/animate.min.css';
+import 'animate.css';
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {

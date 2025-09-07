@@ -10,7 +10,7 @@ const WorksStyle1 = () => {
   return (
     <section className="works section-padding pb-70">
       <h2 style={{display: 'none'}}> &nbsp; </h2>
-      <div className="container">
+      <div className="container" style={{border: 'solid red 5px'}}>
         <div className="row lg-space">
           <div className="col-lg-4 col-md-6">
             <div className="item">

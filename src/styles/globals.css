@@ -16,13 +16,17 @@
   text-decoration: none;
   /* Added hight styles below */
   background-size: 100% 88%;
-  color: #11141b;
+  color: #11141b !important;
 }
 
 /* .highlight:hover {
   background-size: 100% 88%;
   color: #11141b;
 } */
+
+.intro-txt-hero {
+  padding-top: 190px !important;
+}
 
 .portfolio-logo {
   font-family: NextSphereBold !important;
